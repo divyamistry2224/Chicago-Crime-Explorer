@@ -1,5 +1,5 @@
 {
-  "version": "3.1.2",
+  "version": "3.1.3",
   "hosting": "GitHub Pages",
   "records": 497909,
   "files": {
@@ -39,9 +39,9 @@
     "dash_app/app.py": "bde926f1f116c82796aaf1de63cb4ae77af66e521a270f99a7ad1e2c82e1e450",
     ".github/workflows/check.yml": "4bd36dcd20ed691006b057719612d2fa978f72b4e1f5072b5019c0271661825f",
     ".github/workflows/pages.yml": "20de65e9640dcb219e3fd22423d193584ee43e6a697a11d785832306cafe88e0",
-    "docs/assets/architecture.drawio": "fcb8e1b1d2ab448418e06cf4676d46c18fb10108cb6656f28fe4406759d261d9",
-    "docs/assets/architecture.png": "cc49f74e8bdbe55612966987eebc95d233b68fef428a87b3231eaffc0c3ba3d4",
-    "docs/assets/architecture.svg": "75b8adf5213362f7e6ab39c6d0f4a1c742645753f102f9c8a0addc078ce90da3",
+    "docs/assets/architecture.drawio": "e6e956c70f12024184c2e08e312650c318795e3d8d83984ddd4272a3a7d7e91d",
+    "docs/assets/architecture.png": "8e9ebd3f16302d160895f32aa7165259b47b51b3b8ec6f8da4fc691b4ab2a6a4",
+    "docs/assets/architecture.svg": "5de6ed1146929b6c101fca2a26b4348e2d5b07becfcc74a342c3bd0314e29705",
     "dist/vendor/sql-wasm.wasm": "0734155c83e493983d1f2ff5b09a4fab6e35a32e9449c7e4e545756439f62d73",
     "dist/vendor/plotly.min.js": "8ef4c6ab1369f0019611cbcd2d5b8aafef23e5d19ef58c39d4b4249831fe2180",
     "dist/vendor/sql-wasm.js": "694ca5b36aa3e6e71f417819d7df390b65343665fcfa5c69015ca33d93d291b3"
