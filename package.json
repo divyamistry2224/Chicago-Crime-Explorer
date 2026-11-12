@@ -1,0 +1,15 @@
+{
+  "name": "chicago-crime-explorer",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Interactive Chicago public-data research portfolio",
+  "scripts": {
+    "test": "node tests/frontend.cjs && node tests/sql.cjs && node tests/workspaces.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

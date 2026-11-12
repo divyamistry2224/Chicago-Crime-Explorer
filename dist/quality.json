@@ -1,0 +1,30 @@
+{
+  "input_records": 10000,
+  "accepted_records": 10000,
+  "quarantined_records": 0,
+  "checks": {
+    "missing_coordinates": 2727,
+    "unknown_community": 320
+  },
+  "reconciled": true,
+  "sample_scope": "10,000 published rows returned within the 2024\u20132025 window; convenience snapshot, not a representative sample. Dashboard totals use independent complete source aggregates.",
+  "rules": [
+    "Parse incident dates without inventing missing values",
+    "Trim and uppercase offense labels",
+    "Deduplicate by published incident ID, first occurrence wins",
+    "Map missing/out-of-range community to Unknown (0)",
+    "Null missing or out-of-Chicago bounding-box coordinates; retain incident",
+    "Preserve unknown boolean flags as null",
+    "Quarantine invalid dates and missing IDs"
+  ],
+  "sha256_input": "e16d09be0de9bff0ae9d711be67aecf9e852b140dbcffe4182918c880d4d77c0",
+  "gold_records": 10000,
+  "generated_at": "2026-11-12T22:24:12.466486+00:00",
+  "aggregate_audit": {
+    "incidents": 497909,
+    "temporal_incidents": 497909,
+    "totals_reconcile": true,
+    "unique_keys": true,
+    "schema_valid": true
+  }
+}
