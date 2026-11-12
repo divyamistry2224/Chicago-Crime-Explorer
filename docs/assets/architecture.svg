@@ -1,28 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1020" viewBox="0 0 1800 1020" role="img" aria-labelledby="desc"><desc id="desc">Detailed infrastructure for the Chicago Crime Explorer: public browser delivery, Socrata extraction, independent record-sample preparation, quality validation, time-based model evaluation, local browser processing, GitHub Actions publication and the Python Dash companion.</desc><rect width="1800" height="1020" fill="white"/>
 <rect x="30" y="40.0" width="1060" height="132.0" rx="5" fill="#f0f5ff" stroke="#89a8d9" stroke-width="1.3" stroke-dasharray="7 4"/>
-<text x="43" y="62.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#41679e" font-weight="600" text-anchor="start">Web application</text>
+<text x="43" y="62.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#41679e" font-weight="600" text-anchor="start">Web</text>
 <rect x="30" y="216.0" width="1060" height="276.0" rx="5" fill="#edf8f4" stroke="#75b6a1" stroke-width="1.3" stroke-dasharray="7 4"/>
-<text x="43" y="238.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#247e69" font-weight="600" text-anchor="start">Data pipeline</text>
+<text x="43" y="238.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#247e69" font-weight="600" text-anchor="start">Data</text>
 <rect x="30" y="536.0" width="1060" height="272.0" rx="5" fill="#fff7e9" stroke="#d7b475" stroke-width="1.3" stroke-dasharray="7 4"/>
-<text x="43" y="558.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#aa7730" font-weight="600" text-anchor="start">Model pipeline</text>
+<text x="43" y="558.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#aa7730" font-weight="600" text-anchor="start">ML</text>
 <rect x="1140" y="40.0" width="630" height="716.0" rx="5" fill="#f5f0fc" stroke="#b29ace" stroke-width="1.3" stroke-dasharray="7 4"/>
-<text x="1153" y="62.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#79599d" font-weight="600" text-anchor="start">Browser runtime</text>
+<text x="1153" y="62.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#79599d" font-weight="600" text-anchor="start">Browser</text>
 <rect x="30" y="872.0" width="1060" height="120.0" rx="5" fill="#f1f5fb" stroke="#91aac9" stroke-width="1.3" stroke-dasharray="7 4"/>
 <text x="43" y="894.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#4e7096" font-weight="600" text-anchor="start">CI / CD</text>
 <rect x="1140" y="808.0" width="630" height="184.0" rx="5" fill="#eef8fb" stroke="#82b9ca" stroke-width="1.3" stroke-dasharray="7 4"/>
-<text x="1153" y="830.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#327d93" font-weight="600" text-anchor="start">Python Dash</text>
+<text x="1153" y="830.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" fill="#327d93" font-weight="600" text-anchor="start">Dash</text>
 <rect x="95" y="79.0" width="50" height="50" rx="8" fill="#556c89"/><g transform="translate(100,84.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="32" cy="18" r="9"/><path d="M15 52v-7c0-11 8-17 17-17s17 6 17 17v7M8 57h48"/></g>
 <text x="120" y="146.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Users</text>
 <rect x="335" y="79.0" width="50" height="50" rx="8" fill="#5579c4"/><g transform="translate(340,84.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="32" cy="32" r="22"/><ellipse cx="32" cy="32" rx="10" ry="22"/><path d="M11 25h42M11 39h42M32 10v44"/></g>
 <text x="360" y="146.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">GitHub Pages</text>
 <rect x="575" y="79.0" width="50" height="50" rx="8" fill="#528d76"/><g transform="translate(580,84.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h25l12 12v33H14zM39 10v13h12M23 33h20M23 41h20M23 49h14"/></g>
-<text x="600" y="146.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Static assets</text>
+<text x="600" y="146.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">HTML / JS</text>
 <rect x="835" y="79.0" width="50" height="50" rx="8" fill="#3195a5"/><g transform="translate(840,84.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><rect x="8" y="12" width="48" height="40" rx="3"/><path d="M8 23h48M15 18h2M22 18h2M29 18h2M18 34l-5 5 5 5M46 34l5 5-5 5M35 30l-7 18"/></g>
-<text x="860" y="146.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Explorer UI</text>
+<text x="860" y="146.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle"></text>
 <defs><marker id="arrow1" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#6688b3"/></marker></defs>
 <path d="M145,100.0 L328,100.0" fill="none" stroke="#6688b3" stroke-width="1.5" marker-end="url(#arrow1)"/>
-<rect x="213.5" y="78.4" width="43.0" height="17" fill="#f0f5ff"/>
-<text x="235" y="90.4" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#6688b3" font-weight="400" text-anchor="middle">HTTPS</text>
 <defs><marker id="arrow2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#6688b3"/></marker></defs>
 <path d="M385,100.0 L568,100.0" fill="none" stroke="#6688b3" stroke-width="1.5" marker-end="url(#arrow2)"/>
 <defs><marker id="arrow3" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#6688b3"/></marker></defs>
@@ -30,21 +28,21 @@
 <defs><marker id="arrow4" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#6688b3"/></marker></defs>
 <path d="M885,100.0 L1128,100.0" fill="none" stroke="#6688b3" stroke-width="1.5" marker-end="url(#arrow4)"/>
 <rect x="95" y="267.0" width="50" height="50" rx="8" fill="#3985bd"/><g transform="translate(100,272.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M14 20l-8 12 8 12M50 20l8 12-8 12M37 13L27 51"/><circle cx="32" cy="32" r="4"/></g>
-<text x="120" y="334.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Chicago API</text>
+<text x="120" y="334.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Socrata</text>
 <rect x="335" y="267.0" width="50" height="50" rx="8" fill="#239983"/><g transform="translate(340,272.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M9 15h29M9 24h22M9 33h18M43 14v32M33 36l10 10 10-10M9 51h47"/></g>
-<text x="360" y="334.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Extract</text>
+<text x="360" y="334.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Python</text>
 <rect x="575" y="267.0" width="50" height="50" rx="8" fill="#8968bc"/><g transform="translate(580,272.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M32 8L8 21v24l24 13 24-13V21zM8 21l24 13 24-13M32 34v24M20 15l24 13M20 28v24"/></g>
-<text x="600" y="334.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Data snapshots</text>
+<text x="600" y="334.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">JSON</text>
 <rect x="835" y="267.0" width="50" height="50" rx="8" fill="#b9923c"/><g transform="translate(840,272.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h36v46H14zM21 22l3 3 5-6M21 35l3 3 5-6M34 22h9M34 35h9M21 47h22"/></g>
-<text x="860" y="334.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Data checks</text>
+<text x="860" y="334.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle"></text>
 <rect x="95" y="403.0" width="50" height="50" rx="8" fill="#3985bd"/><g transform="translate(100,408.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M10 10h32v44H10zM18 21h16M18 30h16M18 39h8M41 37h16M49 29v16"/></g>
-<text x="120" y="470.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Raw sample</text>
+<text x="120" y="470.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">CSV</text>
 <rect x="335" y="403.0" width="50" height="50" rx="8" fill="#239983"/><g transform="translate(340,408.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M8 12h48L38 33v18l-12 6V33zM23 24l6 6 12-12"/></g>
-<text x="360" y="470.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Clean + validate</text>
+<text x="360" y="470.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle"></text>
 <rect x="575" y="403.0" width="50" height="50" rx="8" fill="#4f9068"/><g transform="translate(580,408.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="32" cy="14" rx="22" ry="8"/><path d="M10 14v36c0 10 44 10 44 0V14M10 26c0 10 44 10 44 0M10 38c0 10 44 10 44 0"/></g>
 <text x="600" y="470.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">SQLite</text>
 <rect x="835" y="403.0" width="50" height="50" rx="8" fill="#b9923c"/><g transform="translate(840,408.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h36v46H14zM21 22l3 3 5-6M21 35l3 3 5-6M34 22h9M34 35h9M21 47h22"/></g>
-<text x="860" y="470.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Quality audit</text>
+<text x="860" y="470.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle"></text>
 <defs><marker id="arrow5" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#32917e"/></marker></defs>
 <path d="M145,288.0 L328,288.0" fill="none" stroke="#32917e" stroke-width="1.5" marker-end="url(#arrow5)"/>
 <defs><marker id="arrow6" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#32917e"/></marker></defs>
@@ -53,8 +51,6 @@
 <path d="M625,288.0 L828,288.0" fill="none" stroke="#32917e" stroke-width="1.5" marker-end="url(#arrow7)"/>
 <defs><marker id="arrow8" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#32917e"/></marker></defs>
 <path d="M360,354.40000000000003 L360,376.0 L120,376.0 L120,398.40000000000003" fill="none" stroke="#32917e" stroke-width="1.5" marker-end="url(#arrow8)"/>
-<rect x="210.4" y="358.40000000000003" width="49.2" height="17" fill="#edf8f4"/>
-<text x="235" y="370.40000000000003" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#32917e" font-weight="400" text-anchor="middle">Sample</text>
 <defs><marker id="arrow9" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#32917e"/></marker></defs>
 <path d="M145,424.0 L328,424.0" fill="none" stroke="#32917e" stroke-width="1.5" marker-end="url(#arrow9)"/>
 <defs><marker id="arrow10" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#32917e"/></marker></defs>
@@ -62,25 +58,23 @@
 <defs><marker id="arrow11" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#32917e"/></marker></defs>
 <path d="M625,424.0 L828,424.0" fill="none" stroke="#32917e" stroke-width="1.5" marker-end="url(#arrow11)"/>
 <rect x="95" y="579.0" width="50" height="50" rx="8" fill="#be8b33"/><g transform="translate(100,584.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><rect x="5" y="23" width="14" height="18" rx="2"/><rect x="25" y="23" width="14" height="18" rx="2"/><rect x="45" y="23" width="14" height="18" rx="2"/><path d="M19 32h6M39 32h6M12 23V12h40v11"/></g>
-<text x="120" y="646.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Features</text>
+<text x="120" y="646.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle"></text>
 <rect x="335" y="579.0" width="50" height="50" rx="8" fill="#bd8b33"/><g transform="translate(340,584.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h25l12 12v33H14zM39 10v13h12M23 33h20M23 41h20M23 49h14"/></g>
-<text x="360" y="646.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Time splits</text>
+<text x="360" y="646.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle"></text>
 <rect x="575" y="579.0" width="50" height="50" rx="8" fill="#bd8b33"/><g transform="translate(580,584.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="13" cy="17" r="5"/><circle cx="13" cy="47" r="5"/><circle cx="32" cy="32" r="6"/><circle cx="51" cy="17" r="5"/><circle cx="51" cy="47" r="5"/><path d="M17 20l10 8M17 44l10-8M37 28l10-8M37 36l10 8"/></g>
-<text x="600" y="646.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Training</text>
+<text x="600" y="646.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">scikit-learn</text>
 <rect x="835" y="579.0" width="50" height="50" rx="8" fill="#9671b9"/><g transform="translate(840,584.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h25l12 12v33H14zM39 10v13h12M23 33h20M23 41h20M23 49h14"/></g>
-<text x="860" y="646.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Model artifacts</text>
+<text x="860" y="646.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">JSON</text>
 <rect x="95" y="715.0" width="50" height="50" rx="8" fill="#a3814b"/><g transform="translate(100,720.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M10 8v46h46M20 44V32h6v12M32 44V22h6v22M44 44V12h6v32"/></g>
-<text x="120" y="782.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Weekly naive</text>
+<text x="120" y="782.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle"></text>
 <rect x="335" y="715.0" width="50" height="50" rx="8" fill="#a678b8"/><g transform="translate(340,720.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="13" cy="17" r="5"/><circle cx="13" cy="47" r="5"/><circle cx="32" cy="32" r="6"/><circle cx="51" cy="17" r="5"/><circle cx="51" cy="47" r="5"/><path d="M17 20l10 8M17 44l10-8M37 28l10-8M37 36l10 8"/></g>
 <text x="360" y="782.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Ridge</text>
 <rect x="575" y="715.0" width="50" height="50" rx="8" fill="#cc8c35"/><g transform="translate(580,720.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="13" cy="17" r="5"/><circle cx="13" cy="47" r="5"/><circle cx="32" cy="32" r="6"/><circle cx="51" cy="17" r="5"/><circle cx="51" cy="47" r="5"/><path d="M17 20l10 8M17 44l10-8M37 28l10-8M37 36l10 8"/></g>
-<text x="600" y="782.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Gradient boosting</text>
+<text x="600" y="782.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">GBM</text>
 <rect x="835" y="715.0" width="50" height="50" rx="8" fill="#bc8b34"/><g transform="translate(840,720.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h36v46H14zM21 22l3 3 5-6M21 35l3 3 5-6M34 22h9M34 35h9M21 47h22"/></g>
-<text x="860" y="782.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Evaluation</text>
+<text x="860" y="782.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle"></text>
 <defs><marker id="arrow12" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#9471b5"/></marker></defs>
 <path d="M600,354.40000000000003 L1072,354.40000000000003 L1072,512.0 L15,512.0 L15,600.0 L88,600.0" fill="none" stroke="#9471b5" stroke-width="1.5" marker-end="url(#arrow12)" stroke-dasharray="6 4"/>
-<rect x="333.0" y="494.40000000000003" width="74.0" height="17" fill="#ffffff"/>
-<text x="370" y="506.40000000000003" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#9471b5" font-weight="400" text-anchor="middle">Daily data</text>
 <defs><marker id="arrow13" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#a98245"/></marker></defs>
 <path d="M145,600.0 L328,600.0" fill="none" stroke="#a98245" stroke-width="1.5" marker-end="url(#arrow13)"/>
 <defs><marker id="arrow14" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#a98245"/></marker></defs>
@@ -100,29 +94,29 @@
 <defs><marker id="arrow21" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#9471b5"/></marker></defs>
 <path d="M860,710.4000000000001 L860,670.4000000000001" fill="none" stroke="#9471b5" stroke-width="1.5" marker-end="url(#arrow21)"/>
 <rect x="1235" y="115.0" width="50" height="50" rx="8" fill="#3195a5"/><g transform="translate(1240,120.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M10 8v46h46M20 44V32h6v12M32 44V22h6v22M44 44V12h6v32"/></g>
-<text x="1260" y="182.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Charts + maps</text>
+<text x="1260" y="182.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Plotly</text>
 <rect x="1545" y="115.0" width="50" height="50" rx="8" fill="#438ea8"/><g transform="translate(1550,120.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M32 8L8 21v24l24 13 24-13V21zM8 21l24 13 24-13M32 34v24M20 15l24 13M20 28v24"/></g>
 <text x="1570" y="182.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">GeoJSON</text>
 <defs><marker id="arrow22" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#6883ad"/></marker></defs>
 <path d="M1538,136.0 L1288,136.0" fill="none" stroke="#6883ad" stroke-width="1.5" marker-end="url(#arrow22)"/>
 <rect x="1235" y="283.0" width="50" height="50" rx="8" fill="#518d68"/><g transform="translate(1240,288.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M22 17L7 32l15 15M42 17l15 15-15 15M37 10L27 54"/></g>
-<text x="1260" y="350.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">SQL console</text>
+<text x="1260" y="350.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle"></text>
 <rect x="1545" y="283.0" width="50" height="50" rx="8" fill="#518d68"/><g transform="translate(1550,288.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="32" cy="14" rx="22" ry="8"/><path d="M10 14v36c0 10 44 10 44 0V14M10 26c0 10 44 10 44 0M10 38c0 10 44 10 44 0"/></g>
-<text x="1570" y="350.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">SQLite WASM</text>
+<text x="1570" y="350.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">SQL.js</text>
 <defs><marker id="arrow23" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#518d68"/></marker></defs>
 <path d="M1285,304.0 L1538,304.0" fill="none" stroke="#518d68" stroke-width="1.5" marker-end="url(#arrow23)"/>
 <rect x="1235" y="459.0" width="50" height="50" rx="8" fill="#8968bc"/><g transform="translate(1240,464.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><rect x="17" y="17" width="30" height="30" rx="3"/><path d="M25 25h14v14H25zM23 8v9M32 8v9M41 8v9M23 47v9M32 47v9M41 47v9M8 23h9M8 32h9M8 41h9M47 23h9M47 32h9M47 41h9"/></g>
-<text x="1260" y="526.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Ridge sandbox</text>
+<text x="1260" y="526.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">JavaScript</text>
 <rect x="1545" y="459.0" width="50" height="50" rx="8" fill="#cc8c35"/><g transform="translate(1550,464.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M13 8h27l11 12v36H13zM40 8v13h11M19 30h26M19 39h26M19 48h26M27 28v22M37 28v22"/></g>
-<text x="1570" y="526.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">CSV validator</text>
+<text x="1570" y="526.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">CSV</text>
 <rect x="1235" y="635.0" width="50" height="50" rx="8" fill="#ad6b98"/><g transform="translate(1240,640.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M9 10h46v34H28L16 55V44H9zM25 22c0-9 16-9 16 0 0 6-8 6-8 12M33 39h.1"/></g>
-<text x="1260" y="702.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Question router</text>
+<text x="1260" y="702.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle"></text>
 <rect x="1545" y="635.0" width="50" height="50" rx="8" fill="#3195a5"/><g transform="translate(1550,640.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M12 34v20h40V34M32 8v32M21 29l11 11 11-11"/></g>
-<text x="1570" y="702.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Exports</text>
+<text x="1570" y="702.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle"></text>
 <rect x="1235" y="867.0" width="50" height="50" rx="8" fill="#3195a5"/><g transform="translate(1240,872.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><rect x="8" y="9" width="48" height="46" rx="3"/><path d="M8 21h48M20 21v34M27 45l7-11 6 5 9-12M27 28h8"/></g>
-<text x="1260" y="934.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Dash app</text>
+<text x="1260" y="934.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Dash</text>
 <rect x="1545" y="867.0" width="50" height="50" rx="8" fill="#528d76"/><g transform="translate(1550,872.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h25l12 12v33H14zM39 10v13h12M23 33h20M23 41h20M23 49h14"/></g>
-<text x="1570" y="934.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Monthly data</text>
+<text x="1570" y="934.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">JSON</text>
 <defs><marker id="arrow24" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#438b8c"/></marker></defs>
 <path d="M1538,888.0 L1288,888.0" fill="none" stroke="#438b8c" stroke-width="1.5" marker-end="url(#arrow24)"/>
 <rect x="95" y="899.0" width="50" height="50" rx="8" fill="#556c89"/><g transform="translate(100,904.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="19" cy="12" r="5"/><circle cx="45" cy="18" r="5"/><circle cx="19" cy="52" r="5"/><path d="M19 17v30M45 23v8c0 10-26 8-26 14"/></g>
@@ -130,9 +124,9 @@
 <rect x="335" y="899.0" width="50" height="50" rx="8" fill="#437fb5"/><g transform="translate(340,904.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><rect x="5" y="23" width="14" height="18" rx="2"/><rect x="25" y="23" width="14" height="18" rx="2"/><rect x="45" y="23" width="14" height="18" rx="2"/><path d="M19 32h6M39 32h6M12 23V12h40v11"/></g>
 <text x="360" y="966.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">GitHub Actions</text>
 <rect x="575" y="899.0" width="50" height="50" rx="8" fill="#528d76"/><g transform="translate(580,904.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M12 35v20h40V35M32 42V9M20 21L32 9l12 12"/></g>
-<text x="600" y="966.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Build artifact</text>
+<text x="600" y="966.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle"></text>
 <rect x="835" y="899.0" width="50" height="50" rx="8" fill="#8968bc"/><g transform="translate(840,904.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M25 39C14 28 28 12 51 8c-2 23-19 38-29 27M22 25L9 29l7 10M39 42l-4 13-10-7M17 45l-7 10M21 48l-4 9"/><circle cx="39" cy="21" r="4"/></g>
-<text x="860" y="966.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Pages deploy</text>
+<text x="860" y="966.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle"></text>
 <defs><marker id="arrow25" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#6184b0"/></marker></defs>
 <path d="M145,920.0 L328,920.0" fill="none" stroke="#6184b0" stroke-width="1.5" marker-end="url(#arrow25)"/>
 <defs><marker id="arrow26" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#6184b0"/></marker></defs>
@@ -141,12 +135,8 @@
 <path d="M625,920.0 L828,920.0" fill="none" stroke="#6184b0" stroke-width="1.5" marker-end="url(#arrow27)"/>
 <defs><marker id="arrow28" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#8968bc"/></marker></defs>
 <path d="M885,920.0 L1120,920.0 L1120,16.0 L360,16.0 L360,74.4" fill="none" stroke="#8968bc" stroke-width="1.5" marker-end="url(#arrow28)"/>
-<rect x="702.3" y="0.0" width="55.4" height="17" fill="#ffffff"/>
-<text x="730" y="12.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#8968bc" font-weight="400" text-anchor="middle">Publish</text>
 <defs><marker id="arrow29" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#9471b5"/></marker></defs>
 <path d="M885,600.0 L1098,600.0 L1098,860.0 L15,860.0 L15,920.0 L88,920.0" fill="none" stroke="#9471b5" stroke-width="1.5" marker-end="url(#arrow29)" stroke-dasharray="6 4"/>
 <defs><marker id="arrow30" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#32917e"/></marker></defs>
 <path d="M885,288.0 L1110,288.0 L1110,780.0 L1570,780.0 L1570,862.4000000000001" fill="none" stroke="#32917e" stroke-width="1.5" marker-end="url(#arrow30)" stroke-dasharray="6 4"/>
-<rect x="1326.8" y="763.2" width="86.4" height="17" fill="#ffffff"/>
-<text x="1370" y="775.2" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#32917e" font-weight="400" text-anchor="middle">Monthly data</text>
 </svg>
