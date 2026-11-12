@@ -1,10 +1,10 @@
 {
-  "version": "3.1.1",
+  "version": "3.1.2",
   "hosting": "GitHub Pages",
   "records": 497909,
   "files": {
     "requirements.txt": "210aa79afa14663437e2f7a78c4b5734dbe3de734b0dc0c689c6198b6c0fb2aa",
-    "README.md": "ac6c9db43241e2217fc692bcd32e4506f6bc26bd4cb99f71d0c9be70df1e407c",
+    "README.md": "745280469527c1fd15a0a6be65e30a865d046c7c5edac58ea8b190cc8b0f3799",
     "package-lock.json": "72160ce66ce4b378e5e8ce8a7dd0e99b78925b837a3c9cbb04ec7e4c04393f5e",
     "RESUME.md": "3cee8fedb9af4aa7d5443e86cdd8644fe74f00f421360c76aca2de3ac46ff406",
     ".gitignore": "257aca0a2441d620ac2a7530d490d255836020135dd0690e176c84e48f25375c",
@@ -39,8 +39,9 @@
     "dash_app/app.py": "bde926f1f116c82796aaf1de63cb4ae77af66e521a270f99a7ad1e2c82e1e450",
     ".github/workflows/check.yml": "4bd36dcd20ed691006b057719612d2fa978f72b4e1f5072b5019c0271661825f",
     ".github/workflows/pages.yml": "20de65e9640dcb219e3fd22423d193584ee43e6a697a11d785832306cafe88e0",
-    "docs/assets/architecture.png": "463a80d01066cf6102df1da79b368f06f1c0525813be3496909ce3e302d995e2",
-    "docs/assets/architecture.svg": "568f0b182e84683cb43e55684670e19f13e99de901d3d0a2f52afaec9dc9c0db",
+    "docs/assets/architecture.drawio": "fcb8e1b1d2ab448418e06cf4676d46c18fb10108cb6656f28fe4406759d261d9",
+    "docs/assets/architecture.png": "cc49f74e8bdbe55612966987eebc95d233b68fef428a87b3231eaffc0c3ba3d4",
+    "docs/assets/architecture.svg": "75b8adf5213362f7e6ab39c6d0f4a1c742645753f102f9c8a0addc078ce90da3",
     "dist/vendor/sql-wasm.wasm": "0734155c83e493983d1f2ff5b09a4fab6e35a32e9449c7e4e545756439f62d73",
     "dist/vendor/plotly.min.js": "8ef4c6ab1369f0019611cbcd2d5b8aafef23e5d19ef58c39d4b4249831fe2180",
     "dist/vendor/sql-wasm.js": "694ca5b36aa3e6e71f417819d7df390b65343665fcfa5c69015ca33d93d291b3"

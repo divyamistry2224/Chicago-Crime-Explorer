@@ -1,104 +1,129 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="1080" viewBox="0 0 1680 1080" role="img" aria-labelledby="title desc">
-<title id="title">Chicago Crime Explorer architecture</title><desc id="desc">City of Chicago data is extracted in Python. Complete city aggregates support interactive reporting and temporal model evaluation. A separate raw-record sample is normalized and audited in SQLite. Versioned static artifacts and tests are deployed through GitHub Actions to a GitHub Pages browser dashboard. A separate Python Plotly Dash application consumes the monthly cube.</desc>
-<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#8297ac"/></marker></defs>
-<rect width="1680" height="1080" fill="#f5f7fb"/>
-<rect width="1680" height="143" fill="#15283d"/>
-<text x="50" y="55" fill="#9fb6cf" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600">CHICAGO CRIME EXPLORER</text>
-<text x="50" y="103" fill="#ffffff" font-family="DejaVu Sans,Arial,sans-serif" font-size="35" font-weight="600">Architecture &amp; infrastructure</text>
-<text x="1190" y="57" fill="#a8bdd2" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="500">PYTHON  /  SQL  /  PLOTLY</text>
-<text x="1190" y="91" fill="#c6d2e2" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">A reproducible public-data workflow</text>
-<rect x="40" y="190" width="350" height="555" rx="16" fill="#e7eef6" stroke="none"/>
-<text x="62" y="226" fill="#3e6e9f" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600">01</text>
-<text x="105" y="226" fill="#3e6e9f" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600">PUBLIC DATA</text>
-<rect x="455" y="190" width="370" height="555" rx="16" fill="#e8f2f0" stroke="none"/>
-<text x="477" y="226" fill="#267e72" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600">02</text>
-<text x="520" y="226" fill="#267e72" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600">DATA ENGINEERING</text>
-<rect x="890" y="190" width="360" height="555" rx="16" fill="#eeeaf6" stroke="none"/>
-<text x="912" y="226" fill="#7957a4" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600">03</text>
-<text x="955" y="226" fill="#7957a4" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600">ANALYTICS &amp; MODELS</text>
-<rect x="1315" y="190" width="325" height="555" rx="16" fill="#e9eef8" stroke="none"/>
-<text x="1337" y="226" fill="#5074a9" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600">04</text>
-<text x="1380" y="226" fill="#5074a9" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600">DELIVERY</text>
-<path d="M390 219 L443 219" fill="none" stroke="#8297ac" stroke-width="2.5" marker-end="url(#arrow)"/>
-<path d="M825 219 L878 219" fill="none" stroke="#8297ac" stroke-width="2.5" marker-end="url(#arrow)"/>
-<path d="M1250 219 L1303 219" fill="none" stroke="#8297ac" stroke-width="2.5" marker-end="url(#arrow)"/>
-<rect x="60" y="260" width="310" height="158" rx="11" fill="#ffffff" stroke="#dce4ef"/>
-<rect x="60" y="260" width="5" height="158" rx="2" fill="#3e6e9f" stroke="none"/>
-<text x="82" y="293" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">Chicago CLEAR records</text>
-<text x="82" y="325" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">2024–2025 incident dates</text>
-<text x="82" y="349" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">497,909 reported incidents</text>
-<text x="82" y="373" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">City of Chicago open-data API</text>
-<rect x="60" y="440" width="310" height="126" rx="11" fill="#ffffff" stroke="#dce4ef"/>
-<rect x="60" y="440" width="5" height="126" rx="2" fill="#3e6e9f" stroke="none"/>
-<text x="82" y="473" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">Community boundaries</text>
-<text x="82" y="505" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">77 administrative areas</text>
-<text x="82" y="529" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Published GeoJSON polygons</text>
-<rect x="60" y="586" width="310" height="132" rx="11" fill="#ffffff" stroke="#dce4ef"/>
-<rect x="60" y="586" width="5" height="132" rx="2" fill="#3e6e9f" stroke="none"/>
-<text x="82" y="619" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">Kaggle catalog</text>
-<text x="82" y="651" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Chicago Crime / BigQuery listing</text>
-<text x="82" y="675" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Reference to the original city data</text>
-<rect x="475" y="260" width="330" height="120" rx="11" fill="#ffffff" stroke="#dce4ef"/>
-<rect x="475" y="260" width="5" height="120" rx="2" fill="#267e72" stroke="none"/>
-<text x="497" y="293" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">Python extraction</text>
-<text x="497" y="325" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Bounded queries and pagination</text>
-<text x="497" y="349" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Retries • atomic output files</text>
-<rect x="475" y="414" width="330" height="163" rx="11" fill="#ffffff" stroke="#dce4ef"/>
-<rect x="475" y="414" width="5" height="163" rx="2" fill="#267e72" stroke="none"/>
-<text x="497" y="447" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">Preparation &amp; quality</text>
-<text x="497" y="479" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Separate 10,000-row audit sample</text>
-<text x="497" y="503" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Dates • categories • duplicate IDs</text>
-<text x="497" y="527" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Coordinate checks • nulls • quarantine</text>
-<rect x="475" y="611" width="330" height="107" rx="11" fill="#ffffff" stroke="#dce4ef"/>
-<rect x="475" y="611" width="5" height="107" rx="2" fill="#267e72" stroke="none"/>
-<text x="497" y="644" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">SQLite sample warehouse</text>
-<text x="497" y="676" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Silver records → gold reporting view</text>
-<path d="M640 380 L640 402" fill="none" stroke="#8297ac" stroke-width="2.5" marker-end="url(#arrow)"/>
-<path d="M640 577 L640 599" fill="none" stroke="#8297ac" stroke-width="2.5" marker-end="url(#arrow)"/>
-<rect x="910" y="260" width="320" height="120" rx="11" fill="#ffffff" stroke="#dce4ef"/>
-<rect x="910" y="260" width="5" height="120" rx="2" fill="#7957a4" stroke="none"/>
-<text x="932" y="293" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">Aggregate data products</text>
-<text x="932" y="325" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Monthly cube • temporal cube</text>
-<text x="932" y="349" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">731 daily citywide observations</text>
-<rect x="910" y="414" width="320" height="163" rx="11" fill="#ffffff" stroke="#dce4ef"/>
-<rect x="910" y="414" width="5" height="163" rx="2" fill="#7957a4" stroke="none"/>
-<text x="932" y="447" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">Model evaluation</text>
-<text x="932" y="479" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Weekly naive • Ridge • boosting</text>
-<text x="932" y="503" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Lagged features • chronological folds</text>
-<text x="932" y="527" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Error metrics • saved predictions</text>
-<rect x="910" y="611" width="320" height="107" rx="11" fill="#ffffff" stroke="#dce4ef"/>
-<rect x="910" y="611" width="5" height="107" rx="2" fill="#7957a4" stroke="none"/>
-<text x="932" y="644" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">Plotly Dash companion</text>
-<text x="932" y="676" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Python dashboard using the cube</text>
-<path d="M1070 380 L1070 402" fill="none" stroke="#8297ac" stroke-width="2.5" marker-end="url(#arrow)"/>
-<rect x="1335" y="260" width="285" height="120" rx="11" fill="#ffffff" stroke="#dce4ef"/>
-<rect x="1335" y="260" width="5" height="120" rx="2" fill="#5074a9" stroke="none"/>
-<text x="1357" y="293" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">GitHub repository</text>
-<text x="1357" y="325" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Source code • versioned data</text>
-<text x="1357" y="349" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Model and application artifacts</text>
-<rect x="1335" y="414" width="285" height="130" rx="11" fill="#ffffff" stroke="#dce4ef"/>
-<rect x="1335" y="414" width="5" height="130" rx="2" fill="#5074a9" stroke="none"/>
-<text x="1357" y="447" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">GitHub Actions</text>
-<text x="1357" y="479" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Python / browser-DOM tests</text>
-<text x="1357" y="503" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">SQLite checks • Pages workflow</text>
-<rect x="1335" y="578" width="285" height="140" rx="11" fill="#ffffff" stroke="#dce4ef"/>
-<rect x="1335" y="578" width="5" height="140" rx="2" fill="#5074a9" stroke="none"/>
-<text x="1357" y="611" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">GitHub Pages</text>
-<text x="1357" y="643" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Static deployment target</text>
-<text x="1357" y="667" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">HTML / JavaScript / Plotly</text>
-<text x="1357" y="691" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">SQLite WebAssembly in browser</text>
-<path d="M1477 380 L1477 402" fill="none" stroke="#8297ac" stroke-width="2.5" marker-end="url(#arrow)"/>
-<path d="M1477 544 L1477 566" fill="none" stroke="#8297ac" stroke-width="2.5" marker-end="url(#arrow)"/>
-<rect x="890" y="803" width="750" height="154" rx="15" fill="#17334a" stroke="none"/>
-<text x="919" y="838" fill="#8db9cd" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="600">INTERACTIVE BROWSER WORKSPACE</text>
-<text x="919" y="878" fill="#ffffff" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="500">Explore. Compare. Query. Experiment.</text>
-<text x="919" y="914" fill="#bfd3e2" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Linked maps • time playback • local SQL • CSV validation • model sandbox</text>
-<path d="M1477 718 L1477 791" fill="none" stroke="#8297ac" stroke-width="2.5" marker-end="url(#arrow)"/>
-<rect x="40" y="803" width="785" height="154" rx="15" fill="#ffffff" stroke="#dce4ef"/>
-<text x="65" y="838" fill="#3b7d76" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="600">TWO INDEPENDENT DATA PATHS</text>
-<text x="65" y="875" fill="#304a61" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="500">Full-city aggregates power reporting and forecasting.</text>
-<text x="65" y="910" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" font-weight="400">The raw-record sample powers quality audits and SQLite preparation.</text>
-<text x="65" y="936" fill="#7a8ca0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">The sample is not used to estimate citywide totals.</text>
-<text x="42" y="1014" fill="#58758e" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="600">PUBLIC DEMO: STATIC ASSETS ON GITHUB PAGES</text>
-<text x="42" y="1043" fill="#7b8ea1" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Python preparation and model evaluation run separately; the browser includes its own exploratory ridge model.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="830" viewBox="0 0 1360 830"><defs><marker id="a" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#79828c"/></marker></defs><rect width="1360" height="830" fill="white"/>
+<rect x="25" y="35" width="830" height="155" fill="none" stroke="#9ca5ae" stroke-dasharray="6 4"/>
+<text x="35" y="54" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="start">Public access</text>
+<rect x="25" y="240" width="830" height="355" fill="none" stroke="#9ca5ae" stroke-dasharray="6 4"/>
+<text x="35" y="259" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="start">Python processing</text>
+<rect x="915" y="35" width="420" height="560" fill="none" stroke="#9ca5ae" stroke-dasharray="6 4"/>
+<text x="925" y="54" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="start">Browser runtime</text>
+<rect x="25" y="665" width="830" height="125" fill="none" stroke="#9ca5ae" stroke-dasharray="6 4"/>
+<text x="35" y="684" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="start">Build and deployment</text>
+<rect x="915" y="695" width="420" height="95" fill="none" stroke="#9ca5ae" stroke-dasharray="6 4"/>
+<text x="925" y="714" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="start">Python dashboard</text>
+<g transform="translate(65,90) scale(.625)" fill="none" stroke="#4a728e" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><circle cx="32" cy="18" r="9"/><path d="M15 52v-7c0-11 8-17 17-17s17 6 17 17v7M8 57h48"/></g>
+<text x="85" y="147" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">Users</text>
+<g transform="translate(270,90) scale(.625)" fill="none" stroke="#4a728e" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><circle cx="32" cy="32" r="22"/><ellipse cx="32" cy="32" rx="10" ry="22"/><path d="M11 25h42M11 39h42M32 10v44"/></g>
+<text x="290" y="147" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">GitHub Pages</text>
+<g transform="translate(475,90) scale(.625)" fill="none" stroke="#617f52" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h25l12 12v33H14zM39 10v13h12M23 33h20M23 41h20M23 49h14"/></g>
+<text x="495" y="147" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">Static files</text>
+<text x="495" y="164" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">HTML / JavaScript / assets</text>
+<g transform="translate(710,90) scale(.625)" fill="none" stroke="#397d8d" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><rect x="8" y="12" width="48" height="40" rx="3"/><path d="M8 23h48M15 18h2M22 18h2M29 18h2M18 34l-5 5 5 5M46 34l5 5-5 5M35 30l-7 18"/></g>
+<text x="730" y="147" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">Explorer UI</text>
+<text x="730" y="164" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Linked maps and filters</text>
+<g transform="translate(95,305) scale(.625)" fill="none" stroke="#4c7e9c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M14 20l-8 12 8 12M50 20l8 12-8 12M37 13L27 51"/><circle cx="32" cy="32" r="4"/></g>
+<text x="115" y="362" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">Chicago API</text>
+<text x="115" y="379" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">CLEAR records</text>
+<g transform="translate(305,305) scale(.625)" fill="none" stroke="#318c7c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M9 15h29M9 24h22M9 33h18M43 14v32M33 36l10 10 10-10M9 51h47"/></g>
+<text x="325" y="362" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">Python extraction</text>
+<text x="325" y="379" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">API snapshots</text>
+<g transform="translate(515,305) scale(.625)" fill="none" stroke="#8a68a5" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M32 8L8 21v24l24 13 24-13V21zM8 21l24 13 24-13M32 34v24M20 15l24 13M20 28v24"/></g>
+<text x="535" y="362" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">JSON aggregates</text>
+<text x="535" y="379" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Monthly / hourly / daily</text>
+<g transform="translate(735,305) scale(.625)" fill="none" stroke="#ad7937" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><circle cx="13" cy="17" r="5"/><circle cx="13" cy="47" r="5"/><circle cx="32" cy="32" r="6"/><circle cx="51" cy="17" r="5"/><circle cx="51" cy="47" r="5"/><path d="M17 20l10 8M17 44l10-8M37 28l10-8M37 36l10 8"/></g>
+<text x="755" y="362" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">scikit-learn</text>
+<text x="755" y="379" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Temporal evaluation</text>
+<g transform="translate(95,485) scale(.625)" fill="none" stroke="#4c7e9c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M10 10h32v44H10zM18 21h16M18 30h16M18 39h8M41 37h16M49 29v16"/></g>
+<text x="115" y="542" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">Raw sample</text>
+<text x="115" y="559" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">10,000 records</text>
+<g transform="translate(305,485) scale(.625)" fill="none" stroke="#318c7c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M8 12h48L38 33v18l-12 6V33zM23 24l6 6 12-12"/></g>
+<text x="325" y="542" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">Normalization</text>
+<text x="325" y="559" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Validate / deduplicate</text>
+<g transform="translate(515,485) scale(.625)" fill="none" stroke="#617f52" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="32" cy="14" rx="22" ry="8"/><path d="M10 14v36c0 10 44 10 44 0V14M10 26c0 10 44 10 44 0M10 38c0 10 44 10 44 0"/></g>
+<text x="535" y="542" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">SQLite</text>
+<text x="535" y="559" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Silver + gold views</text>
+<g transform="translate(735,485) scale(.625)" fill="none" stroke="#a17b3d" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h36v46H14zM21 22l3 3 5-6M21 35l3 3 5-6M34 22h9M34 35h9M21 47h22"/></g>
+<text x="755" y="542" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">Quality checks</text>
+<text x="755" y="559" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Audit + reconciliation</text>
+<g transform="translate(990,100) scale(.625)" fill="none" stroke="#617f52" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="32" cy="14" rx="22" ry="8"/><path d="M10 14v36c0 10 44 10 44 0V14M10 26c0 10 44 10 44 0M10 38c0 10 44 10 44 0"/></g>
+<text x="1010" y="157" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">SQLite WASM</text>
+<text x="1010" y="174" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">SQL sandbox</text>
+<g transform="translate(1190,100) scale(.625)" fill="none" stroke="#397d8d" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M10 8v46h46M20 44V32h6v12M32 44V22h6v22M44 44V12h6v32"/></g>
+<text x="1210" y="157" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">Plotly.js</text>
+<text x="1210" y="174" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Interactive charts</text>
+<g transform="translate(990,290) scale(.625)" fill="none" stroke="#8a68a5" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><rect x="17" y="17" width="30" height="30" rx="3"/><path d="M25 25h14v14H25zM23 8v9M32 8v9M41 8v9M23 47v9M32 47v9M41 47v9M8 23h9M8 32h9M8 41h9M47 23h9M47 32h9M47 41h9"/></g>
+<text x="1010" y="347" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">JavaScript ridge</text>
+<text x="1010" y="364" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">In-browser fitting</text>
+<g transform="translate(1190,290) scale(.625)" fill="none" stroke="#ad7937" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M13 8h27l11 12v36H13zM40 8v13h11M19 30h26M19 39h26M19 48h26M27 28v22M37 28v22"/></g>
+<text x="1210" y="347" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">CSV preparation</text>
+<text x="1210" y="364" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Local file validation</text>
+<g transform="translate(990,480) scale(.625)" fill="none" stroke="#a46b90" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M9 10h46v34H28L16 55V44H9zM25 22c0-9 16-9 16 0 0 6-8 6-8 12M33 39h.1"/></g>
+<text x="1010" y="537" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">Question router</text>
+<text x="1010" y="554" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Deterministic calculations</text>
+<g transform="translate(1190,480) scale(.625)" fill="none" stroke="#397d8d" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 34v20h40V34M32 8v32M21 29l11 11 11-11"/></g>
+<text x="1210" y="537" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">Export</text>
+<text x="1210" y="554" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">CSV / PNG / briefings</text>
+<g transform="translate(95,705) scale(.625)" fill="none" stroke="#4a728e" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><circle cx="19" cy="12" r="5"/><circle cx="45" cy="18" r="5"/><circle cx="19" cy="52" r="5"/><path d="M19 17v30M45 23v8c0 10-26 8-26 14"/></g>
+<text x="115" y="762" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">GitHub repository</text>
+<g transform="translate(305,705) scale(.625)" fill="none" stroke="#397d8d" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><rect x="5" y="23" width="14" height="18" rx="2"/><rect x="25" y="23" width="14" height="18" rx="2"/><rect x="45" y="23" width="14" height="18" rx="2"/><path d="M19 32h6M39 32h6M12 23V12h40v11"/></g>
+<text x="325" y="762" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">GitHub Actions</text>
+<text x="325" y="779" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Python + Node tests</text>
+<g transform="translate(515,705) scale(.625)" fill="none" stroke="#617f52" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h25l12 12v33H14zM39 10v13h12M23 33h20M23 41h20M23 49h14"/></g>
+<text x="535" y="762" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">dist/ artifact</text>
+<text x="535" y="779" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Versioned snapshot</text>
+<g transform="translate(735,705) scale(.625)" fill="none" stroke="#8a68a5" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 35v20h40V35M32 42V9M20 21L32 9l12 12"/></g>
+<text x="755" y="762" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">Pages deployment</text>
+<g transform="translate(1000,720) scale(.625)" fill="none" stroke="#397d8d" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><rect x="8" y="9" width="48" height="46" rx="3"/><path d="M8 21h48M20 21v34M27 45l7-11 6 5 9-12M27 28h8"/></g>
+<text x="1020" y="777" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="600" text-anchor="middle">Plotly Dash</text>
+<text x="1120" y="735" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#3f4954" font-weight="400" text-anchor="start">Python reporting app</text>
+<text x="1120" y="757" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="start">Monthly cube input</text>
+<path d="M105,110 L258,110" fill="none" stroke="#7c858f" stroke-width="1.3" marker-end="url(#a)"/>
+<rect x="160.5" y="87" width="39.0" height="15" fill="white"/>
+<text x="180" y="98" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">HTTPS</text>
+<path d="M310,110 L463,110" fill="none" stroke="#7c858f" stroke-width="1.3" marker-end="url(#a)"/>
+<rect x="365.5" y="87" width="39.0" height="15" fill="white"/>
+<text x="385" y="98" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Serve</text>
+<path d="M515,110 L698,110" fill="none" stroke="#7c858f" stroke-width="1.3" marker-end="url(#a)"/>
+<rect x="582.6" y="87" width="44.8" height="15" fill="white"/>
+<text x="605" y="98" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Render</text>
+<path d="M750,110 L902,110" fill="none" stroke="#7c858f" stroke-width="1.3" marker-end="url(#a)"/>
+<rect x="779.5" y="87" width="97.0" height="15" fill="white"/>
+<text x="828" y="98" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Local execution</text>
+<path d="M135,325 L293,325" fill="none" stroke="#7c858f" stroke-width="1.3" marker-end="url(#a)"/>
+<rect x="190.5" y="302" width="39.0" height="15" fill="white"/>
+<text x="210" y="313" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Fetch</text>
+<path d="M345,325 L503,325" fill="none" stroke="#7c858f" stroke-width="1.3" marker-end="url(#a)"/>
+<rect x="393.9" y="302" width="62.199999999999996" height="15" fill="white"/>
+<text x="425" y="313" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Aggregate</text>
+<path d="M555,325 L723,325" fill="none" stroke="#7c858f" stroke-width="1.3" marker-end="url(#a)"/>
+<rect x="600.2" y="302" width="79.6" height="15" fill="white"/>
+<text x="640" y="313" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Daily counts</text>
+<path d="M325,384 L325,425 L115,425 L115,473" fill="none" stroke="#7c858f" stroke-width="1.3" marker-end="url(#a)"/>
+<rect x="192.6" y="408" width="44.8" height="15" fill="white"/>
+<text x="215" y="419" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Sample</text>
+<path d="M135,505 L293,505" fill="none" stroke="#7c858f" stroke-width="1.3" marker-end="url(#a)"/>
+<rect x="189.7" y="482" width="50.6" height="15" fill="white"/>
+<text x="215" y="493" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Prepare</text>
+<path d="M345,505 L503,505" fill="none" stroke="#7c858f" stroke-width="1.3" marker-end="url(#a)"/>
+<rect x="393.9" y="482" width="62.199999999999996" height="15" fill="white"/>
+<text x="425" y="493" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Transform</text>
+<path d="M555,505 L723,505" fill="none" stroke="#7c858f" stroke-width="1.3" marker-end="url(#a)"/>
+<rect x="620.5" y="482" width="39.0" height="15" fill="white"/>
+<text x="640" y="493" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Check</text>
+<path d="M755,384 L820,384 L820,625 L15,625 L15,725 L83,725" fill="none" stroke="#7c858f" stroke-width="1.3" marker-end="url(#a)" stroke-dasharray="5 4"/>
+<rect x="421.5" y="607" width="97.0" height="15" fill="white"/>
+<text x="470" y="618" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Model artifacts</text>
+<path d="M135,725 L293,725" fill="none" stroke="#7c858f" stroke-width="1.3" marker-end="url(#a)"/>
+<rect x="192.6" y="702" width="44.8" height="15" fill="white"/>
+<text x="215" y="713" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Commit</text>
+<path d="M345,725 L503,725" fill="none" stroke="#7c858f" stroke-width="1.3" marker-end="url(#a)"/>
+<rect x="396.8" y="702" width="56.4" height="15" fill="white"/>
+<text x="425" y="713" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Validate</text>
+<path d="M555,725 L723,725" fill="none" stroke="#7c858f" stroke-width="1.3" marker-end="url(#a)"/>
+<rect x="617.6" y="702" width="44.8" height="15" fill="white"/>
+<text x="640" y="713" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Upload</text>
+<path d="M775,725 L885,725 L885,15 L290,15 L290,78" fill="none" stroke="#7c858f" stroke-width="1.3" marker-end="url(#a)"/>
+<rect x="574.7" y="1" width="50.6" height="15" fill="white"/>
+<text x="600" y="12" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Publish</text>
+<path d="M535,384 L535,405 L840,405 L840,610 L870,610 L870,740 L988,740" fill="none" stroke="#7c858f" stroke-width="1.3" marker-end="url(#a)" stroke-dasharray="5 4"/>
+<rect x="660.2" y="593" width="79.6" height="15" fill="white"/>
+<text x="700" y="604" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#687480" font-weight="400" text-anchor="middle">Monthly cube</text>
 </svg>
