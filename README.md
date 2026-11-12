@@ -4,8 +4,6 @@ An end-to-end public-data portfolio: Python preparation, auditable SQL aggregate
 
 **Live demo:** https://divyamistry2224.github.io/Chicago-Crime-Explorer/
 
-**Source repository:** https://github.com/divyamistry2224/Chicago-Crime-Explorer
-
 ## What is actually implemented
 
 | Area | Evidence |
