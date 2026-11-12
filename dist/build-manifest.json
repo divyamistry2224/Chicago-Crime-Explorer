@@ -1,10 +1,10 @@
 {
-  "version": "3.1.0",
+  "version": "3.1.1",
   "hosting": "GitHub Pages",
   "records": 497909,
   "files": {
     "requirements.txt": "210aa79afa14663437e2f7a78c4b5734dbe3de734b0dc0c689c6198b6c0fb2aa",
-    "README.md": "db515b441b19a39762c0d51fbfdf41022685e6546e7685dea8f8d9eacfa6fcd1",
+    "README.md": "ac6c9db43241e2217fc692bcd32e4506f6bc26bd4cb99f71d0c9be70df1e407c",
     "package-lock.json": "72160ce66ce4b378e5e8ce8a7dd0e99b78925b837a3c9cbb04ec7e4c04393f5e",
     "RESUME.md": "3cee8fedb9af4aa7d5443e86cdd8644fe74f00f421360c76aca2de3ac46ff406",
     ".gitignore": "257aca0a2441d620ac2a7530d490d255836020135dd0690e176c84e48f25375c",
@@ -22,7 +22,7 @@
     "dist/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "dist/daily.json": "822581c6fc3de1babdfea914d82b8ac99affa818c824ec28fd3590ae1067c301",
     "dist/experience.js": "f38a047c466781e8292f5914df053ed5bbbc8b3377e256d169622772de0b0feb",
-    "dist/index.html": "490b79fa99bf9e1a658cc7cc09c439a82ea9eae1d953ecc4cf854b11726810c3",
+    "dist/index.html": "668b0f5cef13ac11ebd270df4c53c7cfdbc94c6e6849a3beccfd2220cff65a57",
     "dist/cube.json": "e57c62839fe2b430d247e34df7b4254849a2766c9fb25b31ca667c2f5d5455be",
     "dist/quality.json": "33d298b7e87f317209e0e962c0736ce2545a3258f04f77a13e1d49b6a64077e9",
     "dist/models.json": "de45da46754014466db43c7bd4663e88c1e846b490cec7ab0de52eb48406e48f",
@@ -39,6 +39,8 @@
     "dash_app/app.py": "bde926f1f116c82796aaf1de63cb4ae77af66e521a270f99a7ad1e2c82e1e450",
     ".github/workflows/check.yml": "4bd36dcd20ed691006b057719612d2fa978f72b4e1f5072b5019c0271661825f",
     ".github/workflows/pages.yml": "20de65e9640dcb219e3fd22423d193584ee43e6a697a11d785832306cafe88e0",
+    "docs/assets/architecture.png": "463a80d01066cf6102df1da79b368f06f1c0525813be3496909ce3e302d995e2",
+    "docs/assets/architecture.svg": "568f0b182e84683cb43e55684670e19f13e99de901d3d0a2f52afaec9dc9c0db",
     "dist/vendor/sql-wasm.wasm": "0734155c83e493983d1f2ff5b09a4fab6e35a32e9449c7e4e545756439f62d73",
     "dist/vendor/plotly.min.js": "8ef4c6ab1369f0019611cbcd2d5b8aafef23e5d19ef58c39d4b4249831fe2180",
     "dist/vendor/sql-wasm.js": "694ca5b36aa3e6e71f417819d7df390b65343665fcfa5c69015ca33d93d291b3"

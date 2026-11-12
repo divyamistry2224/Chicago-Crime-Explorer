@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="1080" viewBox="0 0 1680 1080" role="img" aria-labelledby="title desc">
+<title id="title">Chicago Crime Explorer architecture</title><desc id="desc">City of Chicago data is extracted in Python. Complete city aggregates support interactive reporting and temporal model evaluation. A separate raw-record sample is normalized and audited in SQLite. Versioned static artifacts and tests are deployed through GitHub Actions to a GitHub Pages browser dashboard. A separate Python Plotly Dash application consumes the monthly cube.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#8297ac"/></marker></defs>
+<rect width="1680" height="1080" fill="#f5f7fb"/>
+<rect width="1680" height="143" fill="#15283d"/>
+<text x="50" y="55" fill="#9fb6cf" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600">CHICAGO CRIME EXPLORER</text>
+<text x="50" y="103" fill="#ffffff" font-family="DejaVu Sans,Arial,sans-serif" font-size="35" font-weight="600">Architecture &amp; infrastructure</text>
+<text x="1190" y="57" fill="#a8bdd2" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="500">PYTHON  /  SQL  /  PLOTLY</text>
+<text x="1190" y="91" fill="#c6d2e2" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">A reproducible public-data workflow</text>
+<rect x="40" y="190" width="350" height="555" rx="16" fill="#e7eef6" stroke="none"/>
+<text x="62" y="226" fill="#3e6e9f" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600">01</text>
+<text x="105" y="226" fill="#3e6e9f" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600">PUBLIC DATA</text>
+<rect x="455" y="190" width="370" height="555" rx="16" fill="#e8f2f0" stroke="none"/>
+<text x="477" y="226" fill="#267e72" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600">02</text>
+<text x="520" y="226" fill="#267e72" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600">DATA ENGINEERING</text>
+<rect x="890" y="190" width="360" height="555" rx="16" fill="#eeeaf6" stroke="none"/>
+<text x="912" y="226" fill="#7957a4" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600">03</text>
+<text x="955" y="226" fill="#7957a4" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600">ANALYTICS &amp; MODELS</text>
+<rect x="1315" y="190" width="325" height="555" rx="16" fill="#e9eef8" stroke="none"/>
+<text x="1337" y="226" fill="#5074a9" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600">04</text>
+<text x="1380" y="226" fill="#5074a9" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="600">DELIVERY</text>
+<path d="M390 219 L443 219" fill="none" stroke="#8297ac" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M825 219 L878 219" fill="none" stroke="#8297ac" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M1250 219 L1303 219" fill="none" stroke="#8297ac" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="60" y="260" width="310" height="158" rx="11" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="60" y="260" width="5" height="158" rx="2" fill="#3e6e9f" stroke="none"/>
+<text x="82" y="293" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">Chicago CLEAR records</text>
+<text x="82" y="325" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">2024–2025 incident dates</text>
+<text x="82" y="349" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">497,909 reported incidents</text>
+<text x="82" y="373" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">City of Chicago open-data API</text>
+<rect x="60" y="440" width="310" height="126" rx="11" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="60" y="440" width="5" height="126" rx="2" fill="#3e6e9f" stroke="none"/>
+<text x="82" y="473" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">Community boundaries</text>
+<text x="82" y="505" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">77 administrative areas</text>
+<text x="82" y="529" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Published GeoJSON polygons</text>
+<rect x="60" y="586" width="310" height="132" rx="11" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="60" y="586" width="5" height="132" rx="2" fill="#3e6e9f" stroke="none"/>
+<text x="82" y="619" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">Kaggle catalog</text>
+<text x="82" y="651" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Chicago Crime / BigQuery listing</text>
+<text x="82" y="675" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Reference to the original city data</text>
+<rect x="475" y="260" width="330" height="120" rx="11" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="475" y="260" width="5" height="120" rx="2" fill="#267e72" stroke="none"/>
+<text x="497" y="293" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">Python extraction</text>
+<text x="497" y="325" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Bounded queries and pagination</text>
+<text x="497" y="349" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Retries • atomic output files</text>
+<rect x="475" y="414" width="330" height="163" rx="11" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="475" y="414" width="5" height="163" rx="2" fill="#267e72" stroke="none"/>
+<text x="497" y="447" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">Preparation &amp; quality</text>
+<text x="497" y="479" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Separate 10,000-row audit sample</text>
+<text x="497" y="503" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Dates • categories • duplicate IDs</text>
+<text x="497" y="527" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Coordinate checks • nulls • quarantine</text>
+<rect x="475" y="611" width="330" height="107" rx="11" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="475" y="611" width="5" height="107" rx="2" fill="#267e72" stroke="none"/>
+<text x="497" y="644" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">SQLite sample warehouse</text>
+<text x="497" y="676" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Silver records → gold reporting view</text>
+<path d="M640 380 L640 402" fill="none" stroke="#8297ac" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M640 577 L640 599" fill="none" stroke="#8297ac" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="910" y="260" width="320" height="120" rx="11" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="910" y="260" width="5" height="120" rx="2" fill="#7957a4" stroke="none"/>
+<text x="932" y="293" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">Aggregate data products</text>
+<text x="932" y="325" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Monthly cube • temporal cube</text>
+<text x="932" y="349" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">731 daily citywide observations</text>
+<rect x="910" y="414" width="320" height="163" rx="11" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="910" y="414" width="5" height="163" rx="2" fill="#7957a4" stroke="none"/>
+<text x="932" y="447" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">Model evaluation</text>
+<text x="932" y="479" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Weekly naive • Ridge • boosting</text>
+<text x="932" y="503" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Lagged features • chronological folds</text>
+<text x="932" y="527" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Error metrics • saved predictions</text>
+<rect x="910" y="611" width="320" height="107" rx="11" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="910" y="611" width="5" height="107" rx="2" fill="#7957a4" stroke="none"/>
+<text x="932" y="644" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">Plotly Dash companion</text>
+<text x="932" y="676" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Python dashboard using the cube</text>
+<path d="M1070 380 L1070 402" fill="none" stroke="#8297ac" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="1335" y="260" width="285" height="120" rx="11" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="1335" y="260" width="5" height="120" rx="2" fill="#5074a9" stroke="none"/>
+<text x="1357" y="293" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">GitHub repository</text>
+<text x="1357" y="325" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Source code • versioned data</text>
+<text x="1357" y="349" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Model and application artifacts</text>
+<rect x="1335" y="414" width="285" height="130" rx="11" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="1335" y="414" width="5" height="130" rx="2" fill="#5074a9" stroke="none"/>
+<text x="1357" y="447" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">GitHub Actions</text>
+<text x="1357" y="479" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Python / browser-DOM tests</text>
+<text x="1357" y="503" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">SQLite checks • Pages workflow</text>
+<rect x="1335" y="578" width="285" height="140" rx="11" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="1335" y="578" width="5" height="140" rx="2" fill="#5074a9" stroke="none"/>
+<text x="1357" y="611" fill="#243b53" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="600">GitHub Pages</text>
+<text x="1357" y="643" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Static deployment target</text>
+<text x="1357" y="667" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">HTML / JavaScript / Plotly</text>
+<text x="1357" y="691" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">SQLite WebAssembly in browser</text>
+<path d="M1477 380 L1477 402" fill="none" stroke="#8297ac" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M1477 544 L1477 566" fill="none" stroke="#8297ac" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="890" y="803" width="750" height="154" rx="15" fill="#17334a" stroke="none"/>
+<text x="919" y="838" fill="#8db9cd" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="600">INTERACTIVE BROWSER WORKSPACE</text>
+<text x="919" y="878" fill="#ffffff" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="500">Explore. Compare. Query. Experiment.</text>
+<text x="919" y="914" fill="#bfd3e2" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Linked maps • time playback • local SQL • CSV validation • model sandbox</text>
+<path d="M1477 718 L1477 791" fill="none" stroke="#8297ac" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="40" y="803" width="785" height="154" rx="15" fill="#ffffff" stroke="#dce4ef"/>
+<text x="65" y="838" fill="#3b7d76" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="600">TWO INDEPENDENT DATA PATHS</text>
+<text x="65" y="875" fill="#304a61" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="500">Full-city aggregates power reporting and forecasting.</text>
+<text x="65" y="910" fill="#53677d" font-family="DejaVu Sans,Arial,sans-serif" font-size="14" font-weight="400">The raw-record sample powers quality audits and SQLite preparation.</text>
+<text x="65" y="936" fill="#7a8ca0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">The sample is not used to estimate citywide totals.</text>
+<text x="42" y="1014" fill="#58758e" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="600">PUBLIC DEMO: STATIC ASSETS ON GITHUB PAGES</text>
+<text x="42" y="1043" fill="#7b8ea1" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="400">Python preparation and model evaluation run separately; the browser includes its own exploratory ridge model.</text>
+</svg>

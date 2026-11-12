@@ -34,12 +34,7 @@ Functional tests exercise these interactions. Actual browser visual verification
 
 ## Architecture
 
-```
-City of Chicago / CLEAR (also the source behind Kaggle's Chicago Crime listing)
-  ├─ raw sample → Python normalize / quarantine → SQLite silver → gold monthly view
-  ├─ complete monthly cube → public browser explorer / SQL.js sandbox / Plotly Dash
-  └─ complete daily counts → lagged features → quarterly backtest → model artifacts
-```
+![Chicago Crime Explorer architecture](docs/assets/architecture.png)
 
 The public demo uses static HTML/JavaScript, vendored Plotly.js and SQLite WebAssembly. It serves bundled aggregate/model artifacts without a running database, ML service, or Google Cloud billing account. The Python Dash companion is included in the source and runs locally; it is not the runtime hosting the public URL.
 
@@ -68,7 +63,6 @@ python pipeline/models.py
 python dash_app/app.py
 ```
 
-Open http://127.0.0.1:8050 . The Dash app includes linked community map, time series, offense bars, date/category/location/flag filters and CSV export. It is a complementary interface, not feature-for-feature identical to the public browser dashboard.
 
 ## Reproduce or refresh the pipeline
 
