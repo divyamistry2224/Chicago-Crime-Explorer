@@ -1,10 +1,10 @@
 {
-  "version": "3.1.10",
+  "version": "3.2.0",
   "hosting": "GitHub Pages",
   "records": 497909,
   "files": {
     "requirements.txt": "210aa79afa14663437e2f7a78c4b5734dbe3de734b0dc0c689c6198b6c0fb2aa",
-    "README.md": "745280469527c1fd15a0a6be65e30a865d046c7c5edac58ea8b190cc8b0f3799",
+    "README.md": "5c543441e5b60abf87e3993f6631b259d03f5336470928edc4afafdcd628f319",
     "package-lock.json": "72160ce66ce4b378e5e8ce8a7dd0e99b78925b837a3c9cbb04ec7e4c04393f5e",
     "RESUME.md": "3cee8fedb9af4aa7d5443e86cdd8644fe74f00f421360c76aca2de3ac46ff406",
     ".gitignore": "257aca0a2441d620ac2a7530d490d255836020135dd0690e176c84e48f25375c",
@@ -39,9 +39,12 @@
     "dash_app/app.py": "bde926f1f116c82796aaf1de63cb4ae77af66e521a270f99a7ad1e2c82e1e450",
     ".github/workflows/check.yml": "4bd36dcd20ed691006b057719612d2fa978f72b4e1f5072b5019c0271661825f",
     ".github/workflows/pages.yml": "20de65e9640dcb219e3fd22423d193584ee43e6a697a11d785832306cafe88e0",
+    "docs/assets/architecture-8k.png": "edf872f01648f92921a39e981bef34b40fba45092f0afd57aaf6c27cbdb85712",
     "docs/assets/architecture.drawio": "fea3c11552226bf09291f6a66976f34ba1ebad8b14bb2a6316b0092b02323198",
-    "docs/assets/architecture.png": "d0f10f65c6a483ec01aa985e4baaf5f6ed1dccbd4ec1d789aab5324bb1ba7217",
+    "docs/assets/architecture.png": "3d90a90d46ed8b055a5e118c0a607d4fd09c2c2a015ec01943e11ca2ec34cc58",
+    "docs/assets/architecture-image.json": "38f94bf4d5baff72f80d327a88a2f2f8f395e0f75256922e90bce1463b47ecfe",
     "docs/assets/architecture.svg": "b8f630780c482abf1be5788fdd2a8e16c2907716a0e8d35c5542fb65c6344ffc",
+    "docs/assets/architecture-native.png": "5200b0ce64a5bc9f9c5a8f1ffd2d70e5062cb37b14c5e2537b05ae440991086c",
     "dist/vendor/sql-wasm.wasm": "0734155c83e493983d1f2ff5b09a4fab6e35a32e9449c7e4e545756439f62d73",
     "dist/vendor/plotly.min.js": "8ef4c6ab1369f0019611cbcd2d5b8aafef23e5d19ef58c39d4b4249831fe2180",
     "dist/vendor/sql-wasm.js": "694ca5b36aa3e6e71f417819d7df390b65343665fcfa5c69015ca33d93d291b3"

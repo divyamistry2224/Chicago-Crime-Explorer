@@ -36,7 +36,7 @@ Functional tests exercise these interactions. Actual browser visual verification
 
 ![Chicago Crime Explorer architecture](docs/assets/architecture.png)
 
-[Editable infrastructure diagram](docs/assets/architecture.drawio)
+[Download 8K PNG](docs/assets/architecture-8k.png) · [Editable structure](docs/assets/architecture.drawio)
 
 The public demo uses static HTML/JavaScript, vendored Plotly.js and SQLite WebAssembly. It serves bundled aggregate/model artifacts without a running database, ML service, or Google Cloud billing account. The Python Dash companion is included in the source and runs locally; it is not the runtime hosting the public URL.
 

@@ -1,0 +1,17 @@
+{
+  "reference": "User-provided architectural data-flow image",
+  "enhanced_native_pixels": [
+    1672,
+    941
+  ],
+  "readme_export_pixels": [
+    3840,
+    2160
+  ],
+  "download_export_pixels": [
+    7680,
+    4320
+  ],
+  "export_method": "Lanczos upscale of the enhanced native image; mild output sharpening",
+  "native_8k": false
+}
