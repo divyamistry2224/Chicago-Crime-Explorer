@@ -125,13 +125,13 @@
         <mxCell id="contract" value="" vertex="1" parent="1" style="shape=image;imageAspect=0;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080%2080%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20rx%3D%2213%22%20fill%3D%22%23b9923c%22%2F%3E%3Cg%20transform%3D%22translate%288%2C8%29%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%222.5%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M14%2010h36v46H14zM21%2022l3%203%205-6M21%2035l3%203%205-6M34%2022h9M34%2035h9M21%2047h22%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;">
           <mxGeometry as="geometry" x="835" y="267.0" width="50" height="50" />
         </mxCell>
-        <mxCell id="contractlabel" value="&lt;b&gt;Data checks&lt;/b&gt;" vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=12;fontColor=#354B61;fillColor=none;strokeColor=none;">
+        <mxCell id="contractlabel" value="&lt;b&gt;Data checks&lt;/b&gt;&lt;br&gt;Schema + count checks" vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=12;fontColor=#354B61;fillColor=none;strokeColor=none;">
           <mxGeometry as="geometry" x="745" y="320.0" width="230" height="47" />
         </mxCell>
         <mxCell id="raw" value="" vertex="1" parent="1" style="shape=image;imageAspect=0;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080%2080%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20rx%3D%2213%22%20fill%3D%22%233985bd%22%2F%3E%3Cg%20transform%3D%22translate%288%2C8%29%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%222.5%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M10%2010h32v44H10zM18%2021h16M18%2030h16M18%2039h8M41%2037h16M49%2029v16%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;">
           <mxGeometry as="geometry" x="95" y="403.0" width="50" height="50" />
         </mxCell>
-        <mxCell id="rawlabel" value="&lt;b&gt;Raw sample&lt;/b&gt;" vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=12;fontColor=#354B61;fillColor=none;strokeColor=none;">
+        <mxCell id="rawlabel" value="&lt;b&gt;Raw sample&lt;/b&gt;&lt;br&gt;Separate audit sample" vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=12;fontColor=#354B61;fillColor=none;strokeColor=none;">
           <mxGeometry as="geometry" x="5" y="456.0" width="230" height="47" />
         </mxCell>
         <mxCell id="normalize" value="" vertex="1" parent="1" style="shape=image;imageAspect=0;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080%2080%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20rx%3D%2213%22%20fill%3D%22%23239983%22%2F%3E%3Cg%20transform%3D%22translate%288%2C8%29%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%222.5%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M8%2012h48L38%2033v18l-12%206V33zM23%2024l6%206%2012-12%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;">
@@ -169,6 +169,9 @@
             <mxPoint as="sourcePoint" x="385" y="288.0" />
             <mxPoint as="targetPoint" x="568" y="288.0" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="label10" value="Check totals" vertex="1" parent="1" style="text;html=1;align=center;fontSize=11;fontColor=#32917e;fillColor=#edf8f4;strokeColor=none;">
+          <mxGeometry as="geometry" x="683.3" y="265.40000000000003" width="86.4" height="20" />
         </mxCell>
         <mxCell id="edge10" edge="1" parent="1" style="edgeStyle=none;endArrow=block;endFill=1;strokeColor=#32917e;strokeWidth=1.8;dashed=0;startArrow=none;startFill=1;">
           <mxGeometry as="geometry" relative="1">
@@ -213,13 +216,13 @@
         <mxCell id="features" value="" vertex="1" parent="1" style="shape=image;imageAspect=0;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080%2080%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20rx%3D%2213%22%20fill%3D%22%23be8b33%22%2F%3E%3Cg%20transform%3D%22translate%288%2C8%29%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%222.5%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%3E%3Crect%20x%3D%225%22%20y%3D%2223%22%20width%3D%2214%22%20height%3D%2218%22%20rx%3D%222%22%2F%3E%3Crect%20x%3D%2225%22%20y%3D%2223%22%20width%3D%2214%22%20height%3D%2218%22%20rx%3D%222%22%2F%3E%3Crect%20x%3D%2245%22%20y%3D%2223%22%20width%3D%2214%22%20height%3D%2218%22%20rx%3D%222%22%2F%3E%3Cpath%20d%3D%22M19%2032h6M39%2032h6M12%2023V12h40v11%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;">
           <mxGeometry as="geometry" x="95" y="579.0" width="50" height="50" />
         </mxCell>
-        <mxCell id="featureslabel" value="&lt;b&gt;Features&lt;/b&gt;" vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=12;fontColor=#354B61;fillColor=none;strokeColor=none;">
+        <mxCell id="featureslabel" value="&lt;b&gt;Features&lt;/b&gt;&lt;br&gt;Lag + rolling inputs" vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=12;fontColor=#354B61;fillColor=none;strokeColor=none;">
           <mxGeometry as="geometry" x="5" y="632.0" width="230" height="47" />
         </mxCell>
         <mxCell id="folds" value="" vertex="1" parent="1" style="shape=image;imageAspect=0;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080%2080%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20rx%3D%2213%22%20fill%3D%22%23bd8b33%22%2F%3E%3Cg%20transform%3D%22translate%288%2C8%29%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%222.5%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M14%2010h25l12%2012v33H14zM39%2010v13h12M23%2033h20M23%2041h20M23%2049h14%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;">
           <mxGeometry as="geometry" x="335" y="579.0" width="50" height="50" />
         </mxCell>
-        <mxCell id="foldslabel" value="&lt;b&gt;Time split&lt;/b&gt;" vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=12;fontColor=#354B61;fillColor=none;strokeColor=none;">
+        <mxCell id="foldslabel" value="&lt;b&gt;Time split&lt;/b&gt;&lt;br&gt;Chronological validation" vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=12;fontColor=#354B61;fillColor=none;strokeColor=none;">
           <mxGeometry as="geometry" x="245" y="632.0" width="230" height="47" />
         </mxCell>
         <mxCell id="experiments" value="" vertex="1" parent="1" style="shape=image;imageAspect=0;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080%2080%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20rx%3D%2213%22%20fill%3D%22%23bd8b33%22%2F%3E%3Cg%20transform%3D%22translate%288%2C8%29%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%222.5%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%3E%3Ccircle%20cx%3D%2213%22%20cy%3D%2217%22%20r%3D%225%22%2F%3E%3Ccircle%20cx%3D%2213%22%20cy%3D%2247%22%20r%3D%225%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%226%22%2F%3E%3Ccircle%20cx%3D%2251%22%20cy%3D%2217%22%20r%3D%225%22%2F%3E%3Ccircle%20cx%3D%2251%22%20cy%3D%2247%22%20r%3D%225%22%2F%3E%3Cpath%20d%3D%22M17%2020l10%208M17%2044l10-8M37%2028l10-8M37%2036l10%208%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;">
@@ -375,7 +378,7 @@
         <mxCell id="worker" value="" vertex="1" parent="1" style="shape=image;imageAspect=0;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080%2080%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20rx%3D%2213%22%20fill%3D%22%23518d68%22%2F%3E%3Cg%20transform%3D%22translate%288%2C8%29%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%222.5%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%3E%3Cellipse%20cx%3D%2232%22%20cy%3D%2214%22%20rx%3D%2222%22%20ry%3D%228%22%2F%3E%3Cpath%20d%3D%22M10%2014v36c0%2010%2044%2010%2044%200V14M10%2026c0%2010%2044%2010%2044%200M10%2038c0%2010%2044%2010%2044%200%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;">
           <mxGeometry as="geometry" x="1545" y="283.0" width="50" height="50" />
         </mxCell>
-        <mxCell id="workerlabel" value="&lt;b&gt;SQL.js&lt;/b&gt;" vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=12;fontColor=#354B61;fillColor=none;strokeColor=none;">
+        <mxCell id="workerlabel" value="&lt;b&gt;SQL.js&lt;/b&gt;&lt;br&gt;Read-only Web Worker" vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=12;fontColor=#354B61;fillColor=none;strokeColor=none;">
           <mxGeometry as="geometry" x="1455" y="336.0" width="230" height="47" />
         </mxCell>
         <mxCell id="label26" value="Query / rows" vertex="1" parent="1" style="text;html=1;align=center;fontSize=11;fontColor=#518d68;fillColor=#f5f0fc;strokeColor=none;">
@@ -460,6 +463,9 @@
         <mxCell id="dash_datalabel" value="&lt;b&gt;Monthly JSON&lt;/b&gt;" vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=12;fontColor=#354B61;fillColor=none;strokeColor=none;">
           <mxGeometry as="geometry" x="1455" y="920.0" width="230" height="47" />
         </mxCell>
+        <mxCell id="label30" value="Load data" vertex="1" parent="1" style="text;html=1;align=center;fontSize=11;fontColor=#438b8c;fillColor=#eef8fb;strokeColor=none;">
+          <mxGeometry as="geometry" x="1376.1" y="864.6" width="67.80000000000001" height="20" />
+        </mxCell>
         <mxCell id="edge30" edge="1" parent="1" style="edgeStyle=none;endArrow=block;endFill=1;strokeColor=#438b8c;strokeWidth=1.8;dashed=0;startArrow=none;startFill=1;">
           <mxGeometry as="geometry" relative="1">
             <mxPoint as="sourcePoint" x="1538" y="888.0" />
@@ -487,7 +493,7 @@
         <mxCell id="deploy" value="" vertex="1" parent="1" style="shape=image;imageAspect=0;image=data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080%2080%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20rx%3D%2213%22%20fill%3D%22%238968bc%22%2F%3E%3Cg%20transform%3D%22translate%288%2C8%29%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%222.5%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M25%2039C14%2028%2028%2012%2051%208c-2%2023-19%2038-29%2027M22%2025L9%2029l7%2010M39%2042l-4%2013-10-7M17%2045l-7%2010M21%2048l-4%209%22%2F%3E%3Ccircle%20cx%3D%2239%22%20cy%3D%2221%22%20r%3D%224%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E;">
           <mxGeometry as="geometry" x="835" y="899.0" width="50" height="50" />
         </mxCell>
-        <mxCell id="deploylabel" value="&lt;b&gt;Deploy&lt;/b&gt;" vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=12;fontColor=#354B61;fillColor=none;strokeColor=none;">
+        <mxCell id="deploylabel" value="&lt;b&gt;Deploy&lt;/b&gt;&lt;br&gt;Static site publication" vertex="1" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=12;fontColor=#354B61;fillColor=none;strokeColor=none;">
           <mxGeometry as="geometry" x="745" y="952.0" width="230" height="47" />
         </mxCell>
         <mxCell id="edge31" edge="1" parent="1" style="edgeStyle=none;endArrow=block;endFill=1;strokeColor=#6184b0;strokeWidth=1.8;dashed=0;startArrow=none;startFill=1;">
@@ -495,6 +501,9 @@
             <mxPoint as="sourcePoint" x="145" y="920.0" />
             <mxPoint as="targetPoint" x="328" y="920.0" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="label32" value="Run tests" vertex="1" parent="1" style="text;html=1;align=center;fontSize=11;fontColor=#6184b0;fillColor=#f1f5fb;strokeColor=none;">
+          <mxGeometry as="geometry" x="442.6" y="896.6" width="67.80000000000001" height="20" />
         </mxCell>
         <mxCell id="edge32" edge="1" parent="1" style="edgeStyle=none;endArrow=block;endFill=1;strokeColor=#6184b0;strokeWidth=1.8;dashed=0;startArrow=none;startFill=1;">
           <mxGeometry as="geometry" relative="1">

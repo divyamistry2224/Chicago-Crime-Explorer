@@ -19,7 +19,7 @@
 <text x="600" y="146.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">HTML / JS</text>
 <rect x="835" y="79.0" width="50" height="50" rx="8" fill="#3195a5"/><g transform="translate(840,84.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><rect x="8" y="12" width="48" height="40" rx="3"/><path d="M8 23h48M15 18h2M22 18h2M29 18h2M18 34l-5 5 5 5M46 34l5 5-5 5M35 30l-7 18"/></g>
 <text x="860" y="146.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Explorer UI</text>
-<text x="860" y="163.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Explore filtered results</text>
+<text x="860" y="161.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Explore filtered results</text>
 <defs><marker id="arrow1" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><path d="M0 0L7 3.5L0 7Z" fill="#6688b3"/></marker></defs>
 <path d="M145,100.0 L328,100.0" fill="none" stroke="#6688b3" stroke-width="1.8" marker-end="url(#arrow1)"/>
 <rect x="216.6" y="78.4" width="36.8" height="17" fill="#f0f5ff"/>
@@ -50,11 +50,13 @@
 <text x="600" y="334.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">JSON snapshots</text>
 <rect x="835" y="267.0" width="50" height="50" rx="8" fill="#b9923c"/><g transform="translate(840,272.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h36v46H14zM21 22l3 3 5-6M21 35l3 3 5-6M34 22h9M34 35h9M21 47h22"/></g>
 <text x="860" y="334.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Data checks</text>
+<text x="860" y="349.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Schema + count checks</text>
 <rect x="95" y="403.0" width="50" height="50" rx="8" fill="#3985bd"/><g transform="translate(100,408.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M10 10h32v44H10zM18 21h16M18 30h16M18 39h8M41 37h16M49 29v16"/></g>
 <text x="120" y="470.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Raw sample</text>
+<text x="120" y="485.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Separate audit sample</text>
 <rect x="335" y="403.0" width="50" height="50" rx="8" fill="#239983"/><g transform="translate(340,408.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M8 12h48L38 33v18l-12 6V33zM23 24l6 6 12-12"/></g>
 <text x="360" y="470.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Clean data</text>
-<text x="360" y="487.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Fix dates and duplicates</text>
+<text x="360" y="485.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Fix dates and duplicates</text>
 <rect x="575" y="403.0" width="50" height="50" rx="8" fill="#4f9068"/><g transform="translate(580,408.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="32" cy="14" rx="22" ry="8"/><path d="M10 14v36c0 10 44 10 44 0V14M10 26c0 10 44 10 44 0M10 38c0 10 44 10 44 0"/></g>
 <text x="600" y="470.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">SQLite</text>
 <rect x="835" y="403.0" width="50" height="50" rx="8" fill="#b9923c"/><g transform="translate(840,408.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h36v46H14zM21 22l3 3 5-6M21 35l3 3 5-6M34 22h9M34 35h9M21 47h22"/></g>
@@ -69,6 +71,8 @@
 <text x="476.5" y="278.40000000000003" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#32917e" font-weight="400" text-anchor="middle">Summarize</text>
 <defs><marker id="arrow10" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><path d="M0 0L7 3.5L0 7Z" fill="#32917e"/></marker></defs>
 <path d="M625,288.0 L828,288.0" fill="none" stroke="#32917e" stroke-width="1.8" marker-end="url(#arrow10)"/>
+<rect x="683.3" y="266.40000000000003" width="86.4" height="17" fill="#edf8f4"/>
+<text x="726.5" y="278.40000000000003" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#32917e" font-weight="400" text-anchor="middle">Check totals</text>
 <defs><marker id="arrow11" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><path d="M0 0L7 3.5L0 7Z" fill="#32917e"/></marker></defs>
 <path d="M360,354.40000000000003 L360,376.0 L120,376.0 L120,398.40000000000003" fill="none" stroke="#32917e" stroke-width="1.8" marker-end="url(#arrow11)"/>
 <rect x="210.4" y="358.40000000000003" width="49.2" height="17" fill="#edf8f4"/>
@@ -83,8 +87,10 @@
 <path d="M625,424.0 L828,424.0" fill="none" stroke="#32917e" stroke-width="1.8" marker-end="url(#arrow14)"/>
 <rect x="95" y="579.0" width="50" height="50" rx="8" fill="#be8b33"/><g transform="translate(100,584.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><rect x="5" y="23" width="14" height="18" rx="2"/><rect x="25" y="23" width="14" height="18" rx="2"/><rect x="45" y="23" width="14" height="18" rx="2"/><path d="M19 32h6M39 32h6M12 23V12h40v11"/></g>
 <text x="120" y="646.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Features</text>
+<text x="120" y="661.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Lag + rolling inputs</text>
 <rect x="335" y="579.0" width="50" height="50" rx="8" fill="#bd8b33"/><g transform="translate(340,584.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h25l12 12v33H14zM39 10v13h12M23 33h20M23 41h20M23 49h14"/></g>
 <text x="360" y="646.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Time split</text>
+<text x="360" y="661.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Chronological validation</text>
 <rect x="575" y="579.0" width="50" height="50" rx="8" fill="#bd8b33"/><g transform="translate(580,584.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="13" cy="17" r="5"/><circle cx="13" cy="47" r="5"/><circle cx="32" cy="32" r="6"/><circle cx="51" cy="17" r="5"/><circle cx="51" cy="47" r="5"/><path d="M17 20l10 8M17 44l10-8M37 28l10-8M37 36l10 8"/></g>
 <text x="600" y="646.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Model training</text>
 <rect x="835" y="579.0" width="50" height="50" rx="8" fill="#9671b9"/><g transform="translate(840,584.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h25l12 12v33H14zM39 10v13h12M23 33h20M23 41h20M23 49h14"/></g>
@@ -97,7 +103,7 @@
 <text x="600" y="782.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Boosting</text>
 <rect x="835" y="715.0" width="50" height="50" rx="8" fill="#bc8b34"/><g transform="translate(840,720.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h36v46H14zM21 22l3 3 5-6M21 35l3 3 5-6M34 22h9M34 35h9M21 47h22"/></g>
 <text x="860" y="782.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Evaluate</text>
-<text x="860" y="799.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Compare prediction errors</text>
+<text x="860" y="797.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Compare prediction errors</text>
 <defs><marker id="arrow15" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><path d="M0 0L7 3.5L0 7Z" fill="#9471b5"/></marker></defs>
 <path d="M600,354.40000000000003 L1072,354.40000000000003 L1072,512.0 L15,512.0 L15,600.0 L88,600.0" fill="none" stroke="#9471b5" stroke-width="1.8" marker-end="url(#arrow15)" stroke-dasharray="6 4"/>
 <rect x="333.0" y="494.40000000000003" width="74.0" height="17" fill="#ffffff"/>
@@ -138,6 +144,7 @@
 <text x="1260" y="350.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">SQL console</text>
 <rect x="1545" y="283.0" width="50" height="50" rx="8" fill="#518d68"/><g transform="translate(1550,288.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="32" cy="14" rx="22" ry="8"/><path d="M10 14v36c0 10 44 10 44 0V14M10 26c0 10 44 10 44 0M10 38c0 10 44 10 44 0"/></g>
 <text x="1570" y="350.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">SQL.js</text>
+<text x="1570" y="365.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Read-only Web Worker</text>
 <defs><marker id="arrow26" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><path d="M0 0L7 3.5L0 7Z" fill="#518d68"/></marker></defs>
 <path d="M1285,304.0 L1538,304.0" fill="none" stroke="#518d68" stroke-width="1.8" marker-end="url(#arrow26)" marker-start="url(#arrow26)"/>
 <rect x="1366.8" y="281.6" width="86.4" height="17" fill="#f5f0fc"/>
@@ -148,7 +155,7 @@
 <text x="1570" y="526.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">CSV validator</text>
 <rect x="1235" y="635.0" width="50" height="50" rx="8" fill="#ad6b98"/><g transform="translate(1240,640.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M9 10h46v34H28L16 55V44H9zM25 22c0-9 16-9 16 0 0 6-8 6-8 12M33 39h.1"/></g>
 <text x="1260" y="702.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Data questions</text>
-<text x="1260" y="719.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Rules-based answers</text>
+<text x="1260" y="717.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Rules-based answers</text>
 <rect x="1545" y="635.0" width="50" height="50" rx="8" fill="#3195a5"/><g transform="translate(1550,640.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M12 34v20h40V34M32 8v32M21 29l11 11 11-11"/></g>
 <text x="1570" y="702.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Exports</text>
 <defs><marker id="arrow27" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><path d="M0 0L7 3.5L0 7Z" fill="#b98d3a"/></marker></defs>
@@ -169,19 +176,24 @@
 <text x="1570" y="934.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Monthly JSON</text>
 <defs><marker id="arrow30" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><path d="M0 0L7 3.5L0 7Z" fill="#438b8c"/></marker></defs>
 <path d="M1538,888.0 L1288,888.0" fill="none" stroke="#438b8c" stroke-width="1.8" marker-end="url(#arrow30)"/>
+<rect x="1376.1" y="865.6" width="67.80000000000001" height="17" fill="#eef8fb"/>
+<text x="1410" y="877.6" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#438b8c" font-weight="400" text-anchor="middle">Load data</text>
 <rect x="95" y="899.0" width="50" height="50" rx="8" fill="#556c89"/><g transform="translate(100,904.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="19" cy="12" r="5"/><circle cx="45" cy="18" r="5"/><circle cx="19" cy="52" r="5"/><path d="M19 17v30M45 23v8c0 10-26 8-26 14"/></g>
 <text x="120" y="966.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">GitHub</text>
 <rect x="335" y="899.0" width="50" height="50" rx="8" fill="#437fb5"/><g transform="translate(340,904.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><rect x="5" y="23" width="14" height="18" rx="2"/><rect x="25" y="23" width="14" height="18" rx="2"/><rect x="45" y="23" width="14" height="18" rx="2"/><path d="M19 32h6M39 32h6M12 23V12h40v11"/></g>
 <text x="360" y="966.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">GitHub Actions</text>
-<text x="360" y="983.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Test before publishing</text>
+<text x="360" y="981.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Test before publishing</text>
 <rect x="575" y="899.0" width="50" height="50" rx="8" fill="#528d76"/><g transform="translate(580,904.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M12 35v20h40V35M32 42V9M20 21L32 9l12 12"/></g>
 <text x="600" y="966.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Build bundle</text>
 <rect x="835" y="899.0" width="50" height="50" rx="8" fill="#8968bc"/><g transform="translate(840,904.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M25 39C14 28 28 12 51 8c-2 23-19 38-29 27M22 25L9 29l7 10M39 42l-4 13-10-7M17 45l-7 10M21 48l-4 9"/><circle cx="39" cy="21" r="4"/></g>
 <text x="860" y="966.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Deploy</text>
+<text x="860" y="981.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Static site publication</text>
 <defs><marker id="arrow31" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><path d="M0 0L7 3.5L0 7Z" fill="#6184b0"/></marker></defs>
 <path d="M145,920.0 L328,920.0" fill="none" stroke="#6184b0" stroke-width="1.8" marker-end="url(#arrow31)"/>
 <defs><marker id="arrow32" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><path d="M0 0L7 3.5L0 7Z" fill="#6184b0"/></marker></defs>
 <path d="M385,920.0 L568,920.0" fill="none" stroke="#6184b0" stroke-width="1.8" marker-end="url(#arrow32)"/>
+<rect x="442.6" y="897.6" width="67.80000000000001" height="17" fill="#f1f5fb"/>
+<text x="476.5" y="909.6" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#6184b0" font-weight="400" text-anchor="middle">Run tests</text>
 <defs><marker id="arrow33" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><path d="M0 0L7 3.5L0 7Z" fill="#6184b0"/></marker></defs>
 <path d="M625,920.0 L828,920.0" fill="none" stroke="#6184b0" stroke-width="1.8" marker-end="url(#arrow33)"/>
 <defs><marker id="arrow34" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><path d="M0 0L7 3.5L0 7Z" fill="#8968bc"/></marker></defs>
