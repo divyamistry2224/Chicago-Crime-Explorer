@@ -48,6 +48,7 @@
 <text x="360" y="334.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Python ingest</text>
 <rect x="575" y="267.0" width="50" height="50" rx="8" fill="#8968bc"/><g transform="translate(580,272.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M32 8L8 21v24l24 13 24-13V21zM8 21l24 13 24-13M32 34v24M20 15l24 13M20 28v24"/></g>
 <text x="600" y="334.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">JSON snapshots</text>
+<text x="600" y="349.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Monthly / hourly / daily</text>
 <rect x="835" y="267.0" width="50" height="50" rx="8" fill="#b9923c"/><g transform="translate(840,272.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h36v46H14zM21 22l3 3 5-6M21 35l3 3 5-6M34 22h9M34 35h9M21 47h22"/></g>
 <text x="860" y="334.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Data checks</text>
 <text x="860" y="349.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Schema + count checks</text>
@@ -87,23 +88,26 @@
 <path d="M625,424.0 L828,424.0" fill="none" stroke="#32917e" stroke-width="1.8" marker-end="url(#arrow14)"/>
 <rect x="95" y="579.0" width="50" height="50" rx="8" fill="#be8b33"/><g transform="translate(100,584.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><rect x="5" y="23" width="14" height="18" rx="2"/><rect x="25" y="23" width="14" height="18" rx="2"/><rect x="45" y="23" width="14" height="18" rx="2"/><path d="M19 32h6M39 32h6M12 23V12h40v11"/></g>
 <text x="120" y="646.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Features</text>
-<text x="120" y="661.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Lag + rolling inputs</text>
+<text x="120" y="661.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">1/7/14/28-day lags</text>
 <rect x="335" y="579.0" width="50" height="50" rx="8" fill="#bd8b33"/><g transform="translate(340,584.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h25l12 12v33H14zM39 10v13h12M23 33h20M23 41h20M23 49h14"/></g>
 <text x="360" y="646.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Time split</text>
-<text x="360" y="661.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Chronological validation</text>
+<text x="360" y="661.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">2024 train → 2025 test</text>
 <rect x="575" y="579.0" width="50" height="50" rx="8" fill="#bd8b33"/><g transform="translate(580,584.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="13" cy="17" r="5"/><circle cx="13" cy="47" r="5"/><circle cx="32" cy="32" r="6"/><circle cx="51" cy="17" r="5"/><circle cx="51" cy="47" r="5"/><path d="M17 20l10 8M17 44l10-8M37 28l10-8M37 36l10 8"/></g>
 <text x="600" y="646.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Model training</text>
 <rect x="835" y="579.0" width="50" height="50" rx="8" fill="#9671b9"/><g transform="translate(840,584.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h25l12 12v33H14zM39 10v13h12M23 33h20M23 41h20M23 49h14"/></g>
 <text x="860" y="646.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Model files</text>
+<text x="860" y="661.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Metrics + predictions</text>
 <rect x="95" y="715.0" width="50" height="50" rx="8" fill="#a3814b"/><g transform="translate(100,720.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M10 8v46h46M20 44V32h6v12M32 44V22h6v22M44 44V12h6v32"/></g>
 <text x="120" y="782.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Baseline</text>
 <rect x="335" y="715.0" width="50" height="50" rx="8" fill="#a678b8"/><g transform="translate(340,720.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="13" cy="17" r="5"/><circle cx="13" cy="47" r="5"/><circle cx="32" cy="32" r="6"/><circle cx="51" cy="17" r="5"/><circle cx="51" cy="47" r="5"/><path d="M17 20l10 8M17 44l10-8M37 28l10-8M37 36l10 8"/></g>
 <text x="360" y="782.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Ridge</text>
+<text x="360" y="797.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Regularized regression</text>
 <rect x="575" y="715.0" width="50" height="50" rx="8" fill="#cc8c35"/><g transform="translate(580,720.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="13" cy="17" r="5"/><circle cx="13" cy="47" r="5"/><circle cx="32" cy="32" r="6"/><circle cx="51" cy="17" r="5"/><circle cx="51" cy="47" r="5"/><path d="M17 20l10 8M17 44l10-8M37 28l10-8M37 36l10 8"/></g>
 <text x="600" y="782.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Boosting</text>
+<text x="600" y="797.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Nonlinear tree ensembles</text>
 <rect x="835" y="715.0" width="50" height="50" rx="8" fill="#bc8b34"/><g transform="translate(840,720.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M14 10h36v46H14zM21 22l3 3 5-6M21 35l3 3 5-6M34 22h9M34 35h9M21 47h22"/></g>
 <text x="860" y="782.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Evaluate</text>
-<text x="860" y="797.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Compare prediction errors</text>
+<text x="860" y="797.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">MAE / RMSE / WAPE</text>
 <defs><marker id="arrow15" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><path d="M0 0L7 3.5L0 7Z" fill="#9471b5"/></marker></defs>
 <path d="M600,354.40000000000003 L1072,354.40000000000003 L1072,512.0 L15,512.0 L15,600.0 L88,600.0" fill="none" stroke="#9471b5" stroke-width="1.8" marker-end="url(#arrow15)" stroke-dasharray="6 4"/>
 <rect x="333.0" y="494.40000000000003" width="74.0" height="17" fill="#ffffff"/>
@@ -151,6 +155,7 @@
 <text x="1410" y="293.6" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#518d68" font-weight="400" text-anchor="middle">Query / rows</text>
 <rect x="1235" y="459.0" width="50" height="50" rx="8" fill="#8968bc"/><g transform="translate(1240,464.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><rect x="17" y="17" width="30" height="30" rx="3"/><path d="M25 25h14v14H25zM23 8v9M32 8v9M41 8v9M23 47v9M32 47v9M41 47v9M8 23h9M8 32h9M8 41h9M47 23h9M47 32h9M47 41h9"/></g>
 <text x="1260" y="526.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Ridge sandbox</text>
+<text x="1260" y="541.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Adjust cutoff and alpha</text>
 <rect x="1545" y="459.0" width="50" height="50" rx="8" fill="#cc8c35"/><g transform="translate(1550,464.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M13 8h27l11 12v36H13zM40 8v13h11M19 30h26M19 39h26M19 48h26M27 28v22M37 28v22"/></g>
 <text x="1570" y="526.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">CSV validator</text>
 <rect x="1235" y="635.0" width="50" height="50" rx="8" fill="#ad6b98"/><g transform="translate(1240,640.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M9 10h46v34H28L16 55V44H9zM25 22c0-9 16-9 16 0 0 6-8 6-8 12M33 39h.1"/></g>
@@ -158,6 +163,7 @@
 <text x="1260" y="717.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">Rules-based answers</text>
 <rect x="1545" y="635.0" width="50" height="50" rx="8" fill="#3195a5"/><g transform="translate(1550,640.0) scale(.625)" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><path d="M12 34v20h40V34M32 8v32M21 29l11 11 11-11"/></g>
 <text x="1570" y="702.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#354b61" font-weight="600" text-anchor="middle">Exports</text>
+<text x="1570" y="717.0" font-family="DejaVu Sans,Arial,sans-serif" font-size="10" fill="#677d91" font-weight="400" text-anchor="middle">CSV / PNG / JSON</text>
 <defs><marker id="arrow27" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><path d="M0 0L7 3.5L0 7Z" fill="#b98d3a"/></marker></defs>
 <path d="M1595,480.0 L1700,480.0 L1700,656.0 L1592,656.0" fill="none" stroke="#b98d3a" stroke-width="1.8" marker-end="url(#arrow27)"/>
 <rect x="1659.9" y="556.0" width="80.2" height="17" fill="#f5f0fc"/>
