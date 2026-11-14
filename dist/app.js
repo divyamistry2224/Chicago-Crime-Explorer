@@ -1,44 +1,777 @@
-'use strict';
-const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],fmt=n=>Math.round(n).toLocaleString('en-US'),pct=n=>(100*n).toFixed(1)+'%',esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),title=s=>s.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
-const NAMES=['Unknown','Rogers Park','West Ridge','Uptown','Lincoln Square','North Center','Lake View','Lincoln Park','Near North Side','Edison Park','Norwood Park','Jefferson Park','Forest Glen','North Park','Albany Park','Portage Park','Irving Park','Dunning','Montclare','Belmont Cragin','Hermosa','Avondale','Logan Square','Humboldt Park','West Town','Austin','West Garfield Park','East Garfield Park','Near West Side','North Lawndale','South Lawndale','Lower West Side','Loop','Near South Side','Armour Square','Douglas','Oakland','Fuller Park','Grand Boulevard','Kenwood','Washington Park','Hyde Park','Woodlawn','South Shore','Chatham','Avalon Park','South Chicago','Burnside','Calumet Heights','Roseland','Pullman','South Deering','East Side','West Pullman','Riverdale','Hegewisch','Garfield Ridge','Archer Heights','Brighton Park','McKinley Park','Bridgeport','New City','West Elsdon','Gage Park','Clearing','West Lawn','Chicago Lawn','West Englewood','Englewood','Greater Grand Crossing','Ashburn','Auburn Gresham','Beverly','Washington Heights','Mount Greenwood','Morgan Park','O’Hare','Edgewater'];
-let DATA=[],CLOCK=[],GEO=null,metric='count',view='overview',sort='count',sortAsc=false,geoOk=false;
-const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-const state=()=>({year:$('#year').value,type:$('#type').value,area:$('#area').value,arrest:$('#arrest').value,domestic:$('#domestic-filter').value,from:+$('#month-from').value||1,to:+$('#month-to').value||12});
-const areaName=a=>NAMES[+a]||'Unknown / unassigned';
-function matches(r,s,ignoreArea=false,ignoreYear=false){return(r.m>=s.from&&r.m<=s.to)&&(s.domestic==='all'||r.d===(s.domestic==='true'))&&(ignoreYear||s.year==='all'||r.y===+s.year)&&(s.type==='all'||r.t===s.type)&&(ignoreArea||s.area==='all'||r.c===+s.area)&&(s.arrest==='all'||r.a===(s.arrest==='true'));}
-function sum(rows){return rows.reduce((v,r)=>v+r.n,0)}
-function wilson(k,n){if(!n)return[0,0];let z=1.96,p=k/n,d=1+z*z/n,c=(p+z*z/(2*n))/d,h=z*Math.sqrt(p*(1-p)/n+z*z/(4*n*n))/d;return[c-h,c+h]}
-function aggregate(rows,key){let d=new Map;rows.forEach(r=>{let k=key(r);d.set(k,(d.get(k)||0)+r.n)});return[...d].sort((a,b)=>b[1]-a[1])}
-function tooltip(e,html){let t=$('#tooltip');t.innerHTML=html;t.style.display='block';t.style.left=Math.max(8,Math.min(e.clientX+13,innerWidth-265))+'px';t.style.top=Math.max(8,Math.min(e.clientY+13,innerHeight-t.offsetHeight-10))+'px'}
-function hideTip(){$('#tooltip').style.display='none'}
-function bindTips(root){root.querySelectorAll('[data-tip]').forEach(el=>{el.addEventListener('mousemove',e=>tooltip(e,el.dataset.tip));el.addEventListener('mouseleave',hideTip)})}
-function showView(v,preserve=false){if(window.routeWorkspace)window.routeWorkspace(v,preserve);view=v;$$('.view').forEach(x=>x.hidden=x.id!=='view-'+v);$$('.nav').forEach(x=>x.classList.toggle('active',x.dataset.view===v));hideTip();if(v==='temporal')renderTemporal();if(v==='communities')renderCommunities();if(location.hash!=='#'+v)history.pushState(null,'','#'+v);if(window.refreshAdvanced)window.refreshAdvanced(v)}
-function series(rows,y){return Array.from({length:12},(_,i)=>sum(rows.filter(r=>r.y===y&&r.m===i+1)))}
-function render(){let from=+$('#month-from').value||1,to=+$('#month-to').value||12;if(from>to){$('#month-to').value=String(from);$('#filter-message').textContent='End month adjusted to match the start month.'}else $('#filter-message').textContent='';const s=state(),rows=DATA.filter(r=>matches(r,s)),total=sum(rows),a=sum(rows.filter(r=>r.a)),d=sum(rows.filter(r=>r.d)),ci=wilson(a,total);let years=s.year==='all'?[2024,2025]:[+s.year],days=years.reduce((n,y)=>n+Array.from({length:s.to-s.from+1},(_,i)=>new Date(y,s.from+i,0).getDate()).reduce((a,b)=>a+b,0),0);
- $('#total').textContent=fmt(total);$('#daily').textContent=(total/days).toFixed(1);$('#arrest-rate').textContent=total?pct(a/total):'—';$('#arrest-ci').textContent=total?'95% Wilson CI '+pct(ci[0])+'–'+pct(ci[1]):'No records in selection';$('#domestic').textContent=total?pct(d/total):'—';
- const previous=sum(DATA.filter(r=>matches(r,{...s,year:'2024'})));if(s.year==='2025'&&previous){let ch=(total/previous-1)*100;$('#change').innerHTML=`<span class="${ch<0?'down':'up'}">${ch<0?'↘':'↗'} ${Math.abs(ch).toFixed(1)}%</span> vs. same months in 2024 · descriptive`;}else $('#change').textContent=s.year==='2024'?'2023 baseline not included':'Combined two-year snapshot';
- $('#scope').textContent=`${s.year==='all'?'2024–2025':s.year} · ${months[s.from-1]}–${months[s.to-1]} / ${s.area==='all'?'Citywide':areaName(s.area)} / ${s.type==='all'?'All offenses':title(s.type)} / ${fmt(total)} records`;
- if(s.area!=='all'&&metric==='rate'){metric='count';$$('.metric').forEach(x=>x.classList.toggle('active',x.dataset.metric==='count'))}$$('.metric')[1].disabled=s.area!=='all';$$('.metric')[1].title=s.area!=='all'?'Community population denominators are not included':'Fixed 2020 city population: 2,746,388';
- renderTrend(s);renderOffenses(rows);renderMap(s,rows);let top=aggregate(rows,r=>r.t)[0];let high=aggregate(rows,r=>r.m)[0];$('#insight-title').textContent=top?title(top[0])+' leads this selection.':'No records match these filters.';$('#insight').textContent=top?`${title(top[0])} accounts for ${pct(top[1]/total)} of selected reports (${fmt(top[1])} records). ${months[high[0]-1]} has the largest ${s.year==='all'?'combined ':''}monthly count in this selection. These are descriptive patterns, not explanations of why crime occurs.`:'Reset or broaden the filters to explore the snapshot.';
- if(view==='temporal')renderTemporal();if(view==='communities')renderCommunities();if(window.refreshAdvanced)window.refreshAdvanced(view);}
-function renderTrend(s){if(window.Plotly&&window.plotlyTrend){window.plotlyTrend(s);return}let both=DATA.filter(r=>matches(r,s,false,true)),v24=series(both,2024),v25=series(both,2025),factor=metric==='rate'?100000/2746388:1;v24=v24.map(x=>x*factor);v25=v25.map(x=>x*factor);let max=Math.max(...v24,...v25,1)*1.15;const w=650,h=232,l=46,r=14,t=15,b=30,x=i=>l+i*(w-l-r)/11,y=v=>h-b-v/max*(h-t-b);let svg=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Monthly incident comparison, 2024 and 2025">`;
- for(let i=0;i<5;i++){let v=max*i/4;svg+=`<line x1="${l}" y1="${y(v)}" x2="${w-r}" y2="${y(v)}" stroke="#e9eee6" stroke-dasharray="3 5"/><text x="${l-10}" y="${y(v)+3}" text-anchor="end" font-size="9" fill="#94a293">${v>=1000?(v/1000).toFixed(1)+'k':Math.round(v)}</text>`}months.forEach((m,i)=>svg+=`<text x="${x(i)}" y="${h-8}" text-anchor="middle" fill="#8c9b8c" font-size="9">${m}</text>`);
- [[v24,'#bac9bc','2024'],[v25,'#0c8172','2025']].forEach(([vals,col,year])=>{let coords=vals.map((v,i)=>`${x(i)},${y(v)}`).join(' ');let active=s.year==='all'||s.year===year;if(year==='2025')svg+=`<polygon points="${l},${h-b} ${coords} ${w-r},${h-b}" fill="#e8f2e9" opacity=".7"/>`;svg+=`<polyline points="${coords}" fill="none" stroke="${col}" stroke-width="${active?2.7:1.5}" ${year==='2024'?'stroke-dasharray="5 5"':''}/>`;vals.forEach((v,i)=>svg+=`<circle cx="${x(i)}" cy="${y(v)}" r="${active?3.2:2}" fill="${col}"/><circle cx="${x(i)}" cy="${y(v)}" r="10" fill="transparent" data-tip="${months[i]} ${year}: ${metric==='rate'?v.toFixed(1)+' per 100,000':fmt(v)+' reports'}"/>`)});svg+='</svg>';$('#trend').innerHTML=svg;$('#rate-note').textContent=metric==='rate'?'* Fixed 2020 city population: 2,746,388. Not annual estimates.':'Both years shown for context; selected year emphasized.';bindTips($('#trend'))}
-function renderOffenses(rows){let agg=aggregate(rows,r=>r.t).slice(0,6),max=agg[0]?.[1]||1;$('#offenses').innerHTML=agg.length?agg.map(([t,n])=>`<button class="bar-row" data-type="${esc(t)}" title="Filter to ${esc(t)}"><div class="bar-label"><span>${esc(title(t))}</span><b>${fmt(n)}</b></div><div class="bar-track"><div class="bar-fill" style="width:${100*n/max}%"></div></div></button>`).join(''):'<p class="muted">No matching records.</p>';$$('#offenses .bar-row').forEach(x=>x.onclick=()=>{$('#type').value=x.dataset.type;render()})}
-function mapId(f){let p=f.properties;return +(p.area_numbe||p.area_num_1||p.community_area||NAMES.findIndex(n=>n.toUpperCase()===String(p.community||p.name||'').toUpperCase()))}
-function renderMap(s,rows){let all=DATA.filter(r=>matches(r,s,true)),counts=new Map(aggregate(all,r=>r.c)),max=Math.max(...counts.values(),1);$('#map-name').textContent=s.area==='all'?'Chicago':areaName(s.area);$('#map-count').textContent=fmt(sum(rows));$('#map-hint').textContent=s.area==='all'?'Select a community on the map to filter the dashboard.':'Selected community · click again to return to citywide.';
- if(!geoOk){$('#map').innerHTML='<div style="padding:25px"><div class="eyebrow">COMMUNITY COUNTS</div>'+[...counts].filter(([a])=>a>0).sort((a,b)=>b[1]-a[1]).slice(0,9).map(([a,n])=>`<button class="bar-row" style="margin-bottom:15px" data-area="${a}"><div class="bar-label"><span>${esc(areaName(a))}</span><b>${fmt(n)}</b></div></button>`).join('')+'</div>';$$('#map [data-area]').forEach(x=>x.onclick=()=>{$('#area').value=x.dataset.area;render()});return}
- let coordinates=[];function walk(x){if(typeof x[0]==='number')coordinates.push(x);else x.forEach(walk)}GEO.features.forEach(f=>walk(f.geometry.coordinates));let minx=Math.min(...coordinates.map(p=>p[0])),maxx=Math.max(...coordinates.map(p=>p[0])),miny=Math.min(...coordinates.map(p=>p[1])),maxy=Math.max(...coordinates.map(p=>p[1]));let w=330,h=340,scale=Math.min((w-35)/((maxx-minx)*.74),(h-30)/(maxy-miny)),px=lon=>17+(lon-minx)*scale*.74,py=lat=>h-15-(lat-miny)*scale;
- let svg='<svg viewBox="0 0 330 340" role="img" aria-label="Chicago community area map, shaded by incident count">';GEO.features.forEach(f=>{let id=mapId(f),n=counts.get(id)||0,alpha=.12+.88*Math.sqrt(n/max),polys=f.geometry.type==='MultiPolygon'?f.geometry.coordinates:[f.geometry.coordinates],path=polys.map(poly=>poly.map(ring=>ring.map((p,i)=>(i?'L':'M')+px(p[0]).toFixed(2)+','+py(p[1]).toFixed(2)).join('')+'Z').join('')).join('');svg+=`<path class="map-path" tabindex="0" role="button" aria-label="${esc(areaName(id))}, ${fmt(n)} reports" data-id="${id}" data-tip="${esc(areaName(id))}: ${fmt(n)} reports" d="${path}" fill="${s.area===String(id)?'#133e36':`rgba(19,111,87,${alpha})`}" stroke="${s.area===String(id)?'#142f2b':'#fff'}" stroke-width="${s.area===String(id)?1.5:.55}"/>`});svg+='</svg>';$('#map').innerHTML='<span class="map-label">CHICAGO / 77 AREAS</span><span class="map-water">LAKE MICHIGAN</span>'+svg;$$('#map path').forEach(p=>{const select=()=>{$('#area').value=s.area===p.dataset.id?'all':p.dataset.id;render()};p.onclick=select;p.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select()}}});bindTips($('#map'))}
-function monthlyRows(){let s=state(),rows=DATA.filter(r=>matches(r,s));let years=s.year==='all'?[2024,2025]:[+s.year];return years.flatMap(y=>months.map((m,i)=>{let rr=rows.filter(r=>r.y===y&&r.m===i+1),n=sum(rr);return{label:`${m} ${y}`,y,m:i+1,n,a:sum(rr.filter(r=>r.a)),d:sum(rr.filter(r=>r.d))}}).filter(r=>r.m>=s.from&&r.m<=s.to))}
-function renderTemporal(){let s=state(),clock=CLOCK.filter(r=>(s.year==='all'||r.y===+s.year)&&(s.type==='all'||r.t===s.type)&&r.m>=s.from&&r.m<=s.to),grid=Array.from({length:7},()=>Array(24).fill(0));clock.forEach(r=>grid[(r.w+6)%7][r.h]+=r.n);let max=Math.max(...grid.flat(),1),days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],svg='<svg viewBox="0 0 650 230" role="img" aria-label="Day of week by hour incident heatmap">';grid.forEach((row,d)=>{svg+=`<text x="0" y="${38+d*25}" fill="#81927e" font-size="10">${days[d]}</text>`;row.forEach((v,h)=>svg+=`<rect x="${38+h*25}" y="${24+d*25}" width="21" height="20" rx="2" fill="rgba(14,117,88,${.05+.95*Math.sqrt(v/max)})" data-tip="${days[d]}, ${String(h).padStart(2,'0')}:00–${String(h).padStart(2,'0')}:59: ${fmt(v)} reports"/>`)});for(let h=0;h<24;h+=3)svg+=`<text x="${38+h*25}" y="15" fill="#81927e" font-size="9">${String(h).padStart(2,'0')}:00</text>`;svg+='</svg>';$('#heatmap').innerHTML=svg;bindTips($('#heatmap'));
- let ms=monthlyRows();$('#monthly-table').innerHTML=ms.map(r=>`<tr><td>${r.label}</td><td>${fmt(r.n)}</td><td>${fmt(r.a)}</td><td>${r.n?pct(r.a/r.n):'—'}</td><td>${fmt(r.d)}</td></tr>`).join('');renderForecast(ms)}
-function renderForecast(ms){if(state().year==='all'&&(state().from!==1||state().to!==12)){$('#forecast').innerHTML='<p class="small-note">Select a single year or the full two-year window for a contiguous monthly trend.</p>';return}if(ms.length<6){$('#forecast').innerHTML='<p class="small-note">Select at least six months to fit the exploratory trend. Use the ML evaluation tab for the fixed time-based benchmark.</p>';return}let n=ms.length,vals=ms.map(r=>r.n),mean=vals.reduce((a,b)=>a+b,0)/n,xbar=(n-1)/2,sxx=vals.reduce((a,_,i)=>a+(i-xbar)**2,0),slope=vals.reduce((a,v,i)=>a+(i-xbar)*(v-mean),0)/sxx,intercept=mean-slope*xbar,sse=vals.reduce((a,v,i)=>a+(v-intercept-slope*i)**2,0),se=Math.sqrt(sse/(n-2)),t=([0,0,0,12.706,4.303,3.182,2.776,2.571,2.447,2.365,2.306,2.262,2.228,2.201,2.179,2.160,2.145,2.131,2.120,2.110,2.101,2.093,2.086,2.080,2.074][n]||2.228),last=ms.at(-1),lastDate=new Date(Date.UTC(last.y,last.m-1,1));if(!vals.some(v=>v)){ $('#forecast').innerHTML='<p class="muted">No records available for a model.</p>';return}let html='';for(let k=0;k<3;k++){let x=n+k,estimate=intercept+slope*x,half=t*se*Math.sqrt(1+1/n+(x-xbar)**2/sxx),date=new Date(Date.UTC(lastDate.getUTCFullYear(),lastDate.getUTCMonth()+1+k,1));html+=`<div class="pred"><span>${months[date.getUTCMonth()]} ${date.getUTCFullYear()}<small>95% prediction interval</small></span><span><b>${fmt(Math.max(0,estimate))}</b><small>${fmt(Math.max(0,estimate-half))}–${fmt(Math.max(0,estimate+half))}</small></span></div>`}let totalSS=vals.reduce((a,v)=>a+(v-mean)**2,0),r2=totalSS?1-sse/totalSS:1;html+=`<div class="forecast-meta">${n} observations · slope ${slope>=0?'+':''}${slope.toFixed(1)} reports/month<br>In-sample R² ${r2.toFixed(3)} · no out-of-sample validation</div>`;$('#forecast').innerHTML=html}
-function renderCommunities(){let s=state(),rows=DATA.filter(r=>matches(r,s,true)),total=sum(rows),search=$('#community-search').value.toLowerCase();let groups=Array.from({length:78},(_,c)=>{let rr=rows.filter(r=>r.c===c),n=sum(rr),a=sum(rr.filter(r=>r.a)),d=sum(rr.filter(r=>r.d));return{c,n,a,d}}).filter(r=>areaName(r.c).toLowerCase().includes(search));groups.sort((a,b)=>{let v=sort==='count'?a.n-b.n:areaName(a.c).localeCompare(areaName(b.c));return sortAsc?v:-v});$('#community-table').innerHTML=groups.map(r=>{let ci=wilson(r.a,r.n);return`<tr><td>${esc(areaName(r.c))}<small style="color:#a2ada0"> / ${r.c||'NA'}</small></td><td>${fmt(r.n)}</td><td>${total?pct(r.n/total):'—'}</td><td>${r.n?pct(r.a/r.n)+' <small style="color:#96a392">('+pct(ci[0])+'–'+pct(ci[1])+')</small>':'—'}</td><td>${r.n?pct(r.d/r.n):'—'}</td><td><button class="text-button" data-area="${r.c}" ${r.c===0?'disabled':''}>Explore ↗</button></td></tr>`}).join('');$$('#community-table [data-area]').forEach(x=>x.onclick=()=>{$('#area').value=x.dataset.area;showView('overview',true);render();scrollTo({top:0,behavior:'smooth'})})}
-function download(name,content,type){let url=URL.createObjectURL(new Blob([content],{type})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),2000)}
-function exportCSV(){let s=state(),rows=DATA.filter(r=>matches(r,s)),q=v=>'"'+String(v).replaceAll('"','""')+'"';let header=['year','month','primary_type','community_area','community_name','arrest','domestic','incident_count','source_dataset','retrieved_date'];let lines=[header,...rows.map(r=>[r.y,r.m,r.t,r.c,areaName(r.c),r.a,r.d,r.n,'City of Chicago ijzp-q8t2','2026-11-12'])];download(`chicago-crime-${s.year}-${s.area}-${s.type==='all'?'all':s.type.toLowerCase().replaceAll(' ','-')}.csv`,'\ufeff'+lines.map(r=>r.map(q).join(',')).join('\r\n'),'text/csv;charset=utf-8')}
-async function init(){try{let [cube,clock,geo]=await Promise.all([fetch('cube.json').then(r=>{if(!r.ok)throw Error('Incident data unavailable');return r.json()}),fetch('clock.json').then(r=>{if(!r.ok)throw Error('Temporal data unavailable');return r.json()}),fetch('geo.json').then(r=>r.json()).catch(()=>null)]);DATA=cube.map(r=>({y:+r.year,m:+r.month,t:r.primary_type||'UNKNOWN',c:+r.community_area||0,a:r.arrest===true||r.arrest==='true',d:r.domestic===true||r.domestic==='true',n:+r.n}));CLOCK=clock.map(r=>({y:+r.year,m:+r.month,t:r.primary_type||'UNKNOWN',w:+r.dow,h:+r.hour,n:+r.n}));GEO=geo;geoOk=GEO?.features?.length===77&&GEO.features.every(f=>f.geometry);if(!geoOk){$('#boundary-source').textContent='Community boundary geometry unavailable in this build; spatial panel shows a labeled count ranking instead.';$('#map').setAttribute('aria-label','Community counts ranking')}
- const types=[...new Set(DATA.map(r=>r.t))].sort();$('#type').innerHTML='<option value="all">All offenses</option>'+types.map(t=>`<option value="${esc(t)}">${esc(title(t))}</option>`).join('');$('#area').innerHTML='<option value="all">All 77 communities</option>'+NAMES.slice(1).map((n,i)=>`<option value="${i+1}">${i+1} · ${esc(n)}</option>`).join('');let total=sum(DATA),clockTotal=CLOCK.reduce((a,r)=>a+r.n,0),unknown=sum(DATA.filter(r=>!r.c));$('#quality').textContent=`Snapshot audit: ${fmt(total)} incident records across ${fmt(DATA.length)} aggregate cells; temporal aggregate totals ${fmt(clockTotal)} records. ${fmt(unknown)} records have unknown/unassigned communities (${pct(unknown/total)}). ${total===clockTotal?'Aggregate totals reconcile.':'Aggregate totals differ; date/time nulls or source revisions may affect reconciliation.'}`;
- $('#loading').hidden=true;$('#app').hidden=false;$$('.filterbar select').forEach(x=>x.onchange=render);$$('.nav').forEach(x=>x.onclick=()=>showView(x.dataset.view));['#source-link','#methods-button','.footer-methods'].forEach(sel=>$(sel).onclick=e=>{e.preventDefault();showView('methods')});$('#explore').onclick=()=>showView('communities');$('#reset').onclick=()=>{$('#year').value='2025';$('#month-from').value='1';$('#month-to').value='12';$('#domestic-filter').value='all';$('#type').value='all';$('#area').value='all';$('#arrest').value='all';render()};$$('.metric').forEach(x=>x.onclick=()=>{metric=x.dataset.metric;$$('.metric').forEach(b=>b.classList.toggle('active',b===x));render()});$('#community-search').oninput=renderCommunities;$('#sort-count').onclick=()=>{sortAsc=sort==='count'?!sortAsc:false;sort='count';renderCommunities()};$('#sort-name').onclick=()=>{sortAsc=sort==='name'?!sortAsc:true;sort='name';renderCommunities()};$('#export').onclick=exportCSV;$('#download-methods').onclick=()=>download('chicago-research-metadata.json',JSON.stringify({title:'Chicago Crime Observatory',kaggle:'https://www.kaggle.com/datasets/chicago/chicago-crime',source:'https://data.cityofchicago.org/resource/ijzp-q8t2.json',retrieved:'2026-11-12',window:['2024-01-01','2025-12-31'],records:total,cube_cells:DATA.length,temporal_records:clockTotal,unknown_community:unknown,population_denominator:{value:2746388,year:2020,source:'US Census QuickFacts, Chicago city, Illinois'},arrest_interval:'Wilson 95%, z=1.96',forecast:'Monthly OLS, 3 months, 95% prediction intervals; no external validation',filters:state()},null,2),'application/json');showView(['overview','temporal','communities','methods','data','models','assistant','project'].includes(location.hash.slice(1))?location.hash.slice(1):'overview');render();window.dashboardReady=true;
- }catch(e){$('#loading').innerHTML='The data snapshot could not load. Please refresh. '+esc(e.message);console.error(e)}}
+"use strict";
+const $ = (s) => document.querySelector(s),
+  $$ = (s) => [...document.querySelectorAll(s)],
+  fmt = (n) => Math.round(n).toLocaleString("en-US"),
+  pct = (n) => (100 * n).toFixed(1) + "%",
+  esc = (s) =>
+    String(s).replace(
+      /[&<>"']/g,
+      (c) =>
+        ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;",
+        })[c],
+    ),
+  title = (s) => s.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+const NAMES = [
+  "Unknown",
+  "Rogers Park",
+  "West Ridge",
+  "Uptown",
+  "Lincoln Square",
+  "North Center",
+  "Lake View",
+  "Lincoln Park",
+  "Near North Side",
+  "Edison Park",
+  "Norwood Park",
+  "Jefferson Park",
+  "Forest Glen",
+  "North Park",
+  "Albany Park",
+  "Portage Park",
+  "Irving Park",
+  "Dunning",
+  "Montclare",
+  "Belmont Cragin",
+  "Hermosa",
+  "Avondale",
+  "Logan Square",
+  "Humboldt Park",
+  "West Town",
+  "Austin",
+  "West Garfield Park",
+  "East Garfield Park",
+  "Near West Side",
+  "North Lawndale",
+  "South Lawndale",
+  "Lower West Side",
+  "Loop",
+  "Near South Side",
+  "Armour Square",
+  "Douglas",
+  "Oakland",
+  "Fuller Park",
+  "Grand Boulevard",
+  "Kenwood",
+  "Washington Park",
+  "Hyde Park",
+  "Woodlawn",
+  "South Shore",
+  "Chatham",
+  "Avalon Park",
+  "South Chicago",
+  "Burnside",
+  "Calumet Heights",
+  "Roseland",
+  "Pullman",
+  "South Deering",
+  "East Side",
+  "West Pullman",
+  "Riverdale",
+  "Hegewisch",
+  "Garfield Ridge",
+  "Archer Heights",
+  "Brighton Park",
+  "McKinley Park",
+  "Bridgeport",
+  "New City",
+  "West Elsdon",
+  "Gage Park",
+  "Clearing",
+  "West Lawn",
+  "Chicago Lawn",
+  "West Englewood",
+  "Englewood",
+  "Greater Grand Crossing",
+  "Ashburn",
+  "Auburn Gresham",
+  "Beverly",
+  "Washington Heights",
+  "Mount Greenwood",
+  "Morgan Park",
+  "O’Hare",
+  "Edgewater",
+];
+let DATA = [],
+  CLOCK = [],
+  GEO = null,
+  metric = "count",
+  view = "overview",
+  sort = "count",
+  sortAsc = false,
+  geoOk = false;
+const months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+const state = () => ({
+  year: $("#year").value,
+  type: $("#type").value,
+  area: $("#area").value,
+  arrest: $("#arrest").value,
+  domestic: $("#domestic-filter").value,
+  from: +$("#month-from").value || 1,
+  to: +$("#month-to").value || 12,
+});
+const areaName = (a) => NAMES[+a] || "Unknown / unassigned";
+function matches(r, s, ignoreArea = false, ignoreYear = false) {
+  return (
+    r.m >= s.from &&
+    r.m <= s.to &&
+    (s.domestic === "all" || r.d === (s.domestic === "true")) &&
+    (ignoreYear || s.year === "all" || r.y === +s.year) &&
+    (s.type === "all" || r.t === s.type) &&
+    (ignoreArea || s.area === "all" || r.c === +s.area) &&
+    (s.arrest === "all" || r.a === (s.arrest === "true"))
+  );
+}
+function sum(rows) {
+  return rows.reduce((v, r) => v + r.n, 0);
+}
+function wilson(k, n) {
+  if (!n) return [0, 0];
+  let z = 1.96,
+    p = k / n,
+    d = 1 + (z * z) / n,
+    c = (p + (z * z) / (2 * n)) / d,
+    h = (z * Math.sqrt((p * (1 - p)) / n + (z * z) / (4 * n * n))) / d;
+  return [c - h, c + h];
+}
+function aggregate(rows, key) {
+  let d = new Map();
+  rows.forEach((r) => {
+    let k = key(r);
+    d.set(k, (d.get(k) || 0) + r.n);
+  });
+  return [...d].sort((a, b) => b[1] - a[1]);
+}
+function tooltip(e, html) {
+  let t = $("#tooltip");
+  t.innerHTML = html;
+  t.style.display = "block";
+  t.style.left = Math.max(8, Math.min(e.clientX + 13, innerWidth - 265)) + "px";
+  t.style.top =
+    Math.max(8, Math.min(e.clientY + 13, innerHeight - t.offsetHeight - 10)) +
+    "px";
+}
+function hideTip() {
+  $("#tooltip").style.display = "none";
+}
+function bindTips(root) {
+  root.querySelectorAll("[data-tip]").forEach((el) => {
+    el.addEventListener("mousemove", (e) => tooltip(e, el.dataset.tip));
+    el.addEventListener("mouseleave", hideTip);
+  });
+}
+function showView(v, preserve = false) {
+  if (window.routeWorkspace) window.routeWorkspace(v, preserve);
+  view = v;
+  $$(".view").forEach((x) => (x.hidden = x.id !== "view-" + v));
+  $$(".nav").forEach((x) => x.classList.toggle("active", x.dataset.view === v));
+  hideTip();
+  if (v === "temporal") renderTemporal();
+  if (v === "communities") renderCommunities();
+  if (location.hash !== "#" + v) history.pushState(null, "", "#" + v);
+  if (window.refreshAdvanced) window.refreshAdvanced(v);
+}
+function series(rows, y) {
+  return Array.from({ length: 12 }, (_, i) =>
+    sum(rows.filter((r) => r.y === y && r.m === i + 1)),
+  );
+}
+function render() {
+  let from = +$("#month-from").value || 1,
+    to = +$("#month-to").value || 12;
+  if (from > to) {
+    $("#month-to").value = String(from);
+    $("#filter-message").textContent =
+      "End month adjusted to match the start month.";
+  } else $("#filter-message").textContent = "";
+  const s = state(),
+    rows = DATA.filter((r) => matches(r, s)),
+    total = sum(rows),
+    a = sum(rows.filter((r) => r.a)),
+    d = sum(rows.filter((r) => r.d)),
+    ci = wilson(a, total);
+  let years = s.year === "all" ? [2024, 2025] : [+s.year],
+    days = years.reduce(
+      (n, y) =>
+        n +
+        Array.from({ length: s.to - s.from + 1 }, (_, i) =>
+          new Date(y, s.from + i, 0).getDate(),
+        ).reduce((a, b) => a + b, 0),
+      0,
+    );
+  $("#total").textContent = fmt(total);
+  $("#daily").textContent = (total / days).toFixed(1);
+  $("#arrest-rate").textContent = total ? pct(a / total) : "—";
+  $("#arrest-ci").textContent = total
+    ? "95% Wilson CI " + pct(ci[0]) + "–" + pct(ci[1])
+    : "No records in selection";
+  $("#domestic").textContent = total ? pct(d / total) : "—";
+  const previous = sum(DATA.filter((r) => matches(r, { ...s, year: "2024" })));
+  if (s.year === "2025" && previous) {
+    let ch = (total / previous - 1) * 100;
+    $("#change").innerHTML =
+      `<span class="${ch < 0 ? "down" : "up"}">${ch < 0 ? "↘" : "↗"} ${Math.abs(ch).toFixed(1)}%</span> vs. same months in 2024 · descriptive`;
+  } else
+    $("#change").textContent =
+      s.year === "2024"
+        ? "2023 baseline not included"
+        : "Combined two-year snapshot";
+  $("#scope").textContent =
+    `${s.year === "all" ? "2024–2025" : s.year} · ${months[s.from - 1]}–${months[s.to - 1]} / ${s.area === "all" ? "Citywide" : areaName(s.area)} / ${s.type === "all" ? "All offenses" : title(s.type)} / ${fmt(total)} records`;
+  if (s.area !== "all" && metric === "rate") {
+    metric = "count";
+    $$(".metric").forEach((x) =>
+      x.classList.toggle("active", x.dataset.metric === "count"),
+    );
+  }
+  $$(".metric")[1].disabled = s.area !== "all";
+  $$(".metric")[1].title =
+    s.area !== "all"
+      ? "Community population denominators are not included"
+      : "Fixed 2020 city population: 2,746,388";
+  renderTrend(s);
+  renderOffenses(rows);
+  renderMap(s, rows);
+  let top = aggregate(rows, (r) => r.t)[0];
+  let high = aggregate(rows, (r) => r.m)[0];
+  $("#insight-title").textContent = top
+    ? title(top[0]) + " leads this selection."
+    : "No records match these filters.";
+  $("#insight").textContent = top
+    ? `${title(top[0])} accounts for ${pct(top[1] / total)} of selected reports (${fmt(top[1])} records). ${months[high[0] - 1]} has the largest ${s.year === "all" ? "combined " : ""}monthly count in this selection. These are descriptive patterns, not explanations of why crime occurs.`
+    : "Reset or broaden the filters to explore the snapshot.";
+  if (view === "temporal") renderTemporal();
+  if (view === "communities") renderCommunities();
+  if (window.refreshAdvanced) window.refreshAdvanced(view);
+}
+function renderTrend(s) {
+  if (window.Plotly && window.plotlyTrend) {
+    window.plotlyTrend(s);
+    return;
+  }
+  let both = DATA.filter((r) => matches(r, s, false, true)),
+    v24 = series(both, 2024),
+    v25 = series(both, 2025),
+    factor = metric === "rate" ? 100000 / 2746388 : 1;
+  v24 = v24.map((x) => x * factor);
+  v25 = v25.map((x) => x * factor);
+  let max = Math.max(...v24, ...v25, 1) * 1.15;
+  const w = 650,
+    h = 232,
+    l = 46,
+    r = 14,
+    t = 15,
+    b = 30,
+    x = (i) => l + (i * (w - l - r)) / 11,
+    y = (v) => h - b - (v / max) * (h - t - b);
+  let svg = `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Monthly incident comparison, 2024 and 2025">`;
+  for (let i = 0; i < 5; i++) {
+    let v = (max * i) / 4;
+    svg += `<line x1="${l}" y1="${y(v)}" x2="${w - r}" y2="${y(v)}" stroke="#e9eee6" stroke-dasharray="3 5"/><text x="${l - 10}" y="${y(v) + 3}" text-anchor="end" font-size="9" fill="#94a293">${v >= 1000 ? (v / 1000).toFixed(1) + "k" : Math.round(v)}</text>`;
+  }
+  months.forEach(
+    (m, i) =>
+      (svg += `<text x="${x(i)}" y="${h - 8}" text-anchor="middle" fill="#8c9b8c" font-size="9">${m}</text>`),
+  );
+  [
+    [v24, "#adc1d2", "2024"],
+    [v25, "#1477b5", "2025"],
+  ].forEach(([vals, col, year]) => {
+    let coords = vals.map((v, i) => `${x(i)},${y(v)}`).join(" ");
+    let active = s.year === "all" || s.year === year;
+    if (year === "2025")
+      svg += `<polygon points="${l},${h - b} ${coords} ${w - r},${h - b}" fill="#e9f1f9" opacity=".7"/>`;
+    svg += `<polyline points="${coords}" fill="none" stroke="${col}" stroke-width="${active ? 2.7 : 1.5}" ${year === "2024" ? 'stroke-dasharray="5 5"' : ""}/>`;
+    vals.forEach(
+      (v, i) =>
+        (svg += `<circle cx="${x(i)}" cy="${y(v)}" r="${active ? 3.2 : 2}" fill="${col}"/><circle cx="${x(i)}" cy="${y(v)}" r="10" fill="transparent" data-tip="${months[i]} ${year}: ${metric === "rate" ? v.toFixed(1) + " per 100,000" : fmt(v) + " reports"}"/>`),
+    );
+  });
+  svg += "</svg>";
+  $("#trend").innerHTML = svg;
+  $("#rate-note").textContent =
+    metric === "rate"
+      ? "* Fixed 2020 city population: 2,746,388. Not annual estimates."
+      : "Both years shown for context; selected year emphasized.";
+  bindTips($("#trend"));
+}
+function renderOffenses(rows) {
+  let agg = aggregate(rows, (r) => r.t).slice(0, 6),
+    max = agg[0]?.[1] || 1;
+  $("#offenses").innerHTML = agg.length
+    ? agg
+        .map(
+          ([t, n]) =>
+            `<button class="bar-row" data-type="${esc(t)}" title="Filter to ${esc(t)}"><div class="bar-label"><span>${esc(title(t))}</span><b>${fmt(n)}</b></div><div class="bar-track"><div class="bar-fill" style="width:${(100 * n) / max}%"></div></div></button>`,
+        )
+        .join("")
+    : '<p class="muted">No matching records.</p>';
+  $$("#offenses .bar-row").forEach(
+    (x) =>
+      (x.onclick = () => {
+        $("#type").value = x.dataset.type;
+        render();
+      }),
+  );
+}
+function mapId(f) {
+  let p = f.properties;
+  return +(
+    p.area_numbe ||
+    p.area_num_1 ||
+    p.community_area ||
+    NAMES.findIndex(
+      (n) =>
+        n.toUpperCase() === String(p.community || p.name || "").toUpperCase(),
+    )
+  );
+}
+function renderMap(s, rows) {
+  let all = DATA.filter((r) => matches(r, s, true)),
+    counts = new Map(aggregate(all, (r) => r.c)),
+    max = Math.max(...counts.values(), 1);
+  $("#map-name").textContent = s.area === "all" ? "Chicago" : areaName(s.area);
+  $("#map-count").textContent = fmt(sum(rows));
+  $("#map-hint").textContent =
+    s.area === "all"
+      ? "Select a community on the map to filter the dashboard."
+      : "Selected community · click again to return to citywide.";
+  if (!geoOk) {
+    $("#map").innerHTML =
+      '<div style="padding:25px"><div class="eyebrow">COMMUNITY COUNTS</div>' +
+      [...counts]
+        .filter(([a]) => a > 0)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 9)
+        .map(
+          ([a, n]) =>
+            `<button class="bar-row" style="margin-bottom:15px" data-area="${a}"><div class="bar-label"><span>${esc(areaName(a))}</span><b>${fmt(n)}</b></div></button>`,
+        )
+        .join("") +
+      "</div>";
+    $$("#map [data-area]").forEach(
+      (x) =>
+        (x.onclick = () => {
+          $("#area").value = x.dataset.area;
+          render();
+        }),
+    );
+    return;
+  }
+  let coordinates = [];
+  function walk(x) {
+    if (typeof x[0] === "number") coordinates.push(x);
+    else x.forEach(walk);
+  }
+  GEO.features.forEach((f) => walk(f.geometry.coordinates));
+  let minx = Math.min(...coordinates.map((p) => p[0])),
+    maxx = Math.max(...coordinates.map((p) => p[0])),
+    miny = Math.min(...coordinates.map((p) => p[1])),
+    maxy = Math.max(...coordinates.map((p) => p[1]));
+  let w = 330,
+    h = 340,
+    scale = Math.min(
+      (w - 35) / ((maxx - minx) * 0.74),
+      (h - 30) / (maxy - miny),
+    ),
+    px = (lon) => 17 + (lon - minx) * scale * 0.74,
+    py = (lat) => h - 15 - (lat - miny) * scale;
+  let svg =
+    '<svg viewBox="0 0 330 340" role="img" aria-label="Chicago community area map, shaded by incident count">';
+  GEO.features.forEach((f) => {
+    let id = mapId(f),
+      n = counts.get(id) || 0,
+      alpha = 0.12 + 0.88 * Math.sqrt(n / max),
+      polys =
+        f.geometry.type === "MultiPolygon"
+          ? f.geometry.coordinates
+          : [f.geometry.coordinates],
+      path = polys
+        .map((poly) =>
+          poly
+            .map(
+              (ring) =>
+                ring
+                  .map(
+                    (p, i) =>
+                      (i ? "L" : "M") +
+                      px(p[0]).toFixed(2) +
+                      "," +
+                      py(p[1]).toFixed(2),
+                  )
+                  .join("") + "Z",
+            )
+            .join(""),
+        )
+        .join("");
+    svg += `<path class="map-path" tabindex="0" role="button" aria-label="${esc(areaName(id))}, ${fmt(n)} reports" data-id="${id}" data-tip="${esc(areaName(id))}: ${fmt(n)} reports" d="${path}" fill="${s.area === String(id) ? "#133e36" : `rgba(25,114,172,${alpha})`}" stroke="${s.area === String(id) ? "#142f2b" : "#fff"}" stroke-width="${s.area === String(id) ? 1.5 : 0.55}"/>`;
+  });
+  svg += "</svg>";
+  $("#map").innerHTML =
+    '<span class="map-label">CHICAGO / 77 AREAS</span><span class="map-water">LAKE MICHIGAN</span>' +
+    svg;
+  $$("#map path").forEach((p) => {
+    const select = () => {
+      $("#area").value = s.area === p.dataset.id ? "all" : p.dataset.id;
+      render();
+    };
+    p.onclick = select;
+    p.onkeydown = (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        select();
+      }
+    };
+  });
+  bindTips($("#map"));
+}
+function monthlyRows() {
+  let s = state(),
+    rows = DATA.filter((r) => matches(r, s));
+  let years = s.year === "all" ? [2024, 2025] : [+s.year];
+  return years.flatMap((y) =>
+    months
+      .map((m, i) => {
+        let rr = rows.filter((r) => r.y === y && r.m === i + 1),
+          n = sum(rr);
+        return {
+          label: `${m} ${y}`,
+          y,
+          m: i + 1,
+          n,
+          a: sum(rr.filter((r) => r.a)),
+          d: sum(rr.filter((r) => r.d)),
+        };
+      })
+      .filter((r) => r.m >= s.from && r.m <= s.to),
+  );
+}
+function renderTemporal() {
+  let s = state(),
+    clock = CLOCK.filter(
+      (r) =>
+        (s.year === "all" || r.y === +s.year) &&
+        (s.type === "all" || r.t === s.type) &&
+        r.m >= s.from &&
+        r.m <= s.to,
+    ),
+    grid = Array.from({ length: 7 }, () => Array(24).fill(0));
+  clock.forEach((r) => (grid[(r.w + 6) % 7][r.h] += r.n));
+  let max = Math.max(...grid.flat(), 1),
+    days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    svg =
+      '<svg viewBox="0 0 650 230" role="img" aria-label="Day of week by hour incident heatmap">';
+  grid.forEach((row, d) => {
+    svg += `<text x="0" y="${38 + d * 25}" fill="#81927e" font-size="10">${days[d]}</text>`;
+    row.forEach(
+      (v, h) =>
+        (svg += `<rect x="${38 + h * 25}" y="${24 + d * 25}" width="21" height="20" rx="2" fill="rgba(26,119,176,${0.05 + 0.95 * Math.sqrt(v / max)})" data-tip="${days[d]}, ${String(h).padStart(2, "0")}:00–${String(h).padStart(2, "0")}:59: ${fmt(v)} reports"/>`),
+    );
+  });
+  for (let h = 0; h < 24; h += 3)
+    svg += `<text x="${38 + h * 25}" y="15" fill="#81927e" font-size="9">${String(h).padStart(2, "0")}:00</text>`;
+  svg += "</svg>";
+  $("#heatmap").innerHTML = svg;
+  bindTips($("#heatmap"));
+  let ms = monthlyRows();
+  $("#monthly-table").innerHTML = ms
+    .map(
+      (r) =>
+        `<tr><td>${r.label}</td><td>${fmt(r.n)}</td><td>${fmt(r.a)}</td><td>${r.n ? pct(r.a / r.n) : "—"}</td><td>${fmt(r.d)}</td></tr>`,
+    )
+    .join("");
+  renderForecast(ms);
+}
+function renderForecast(ms) {
+  if (state().year === "all" && (state().from !== 1 || state().to !== 12)) {
+    $("#forecast").innerHTML =
+      '<p class="small-note">Select a single year or the full two-year window for a contiguous monthly trend.</p>';
+    return;
+  }
+  if (ms.length < 6) {
+    $("#forecast").innerHTML =
+      '<p class="small-note">Select at least six months to fit the exploratory trend. Use the ML evaluation tab for the fixed time-based benchmark.</p>';
+    return;
+  }
+  let n = ms.length,
+    vals = ms.map((r) => r.n),
+    mean = vals.reduce((a, b) => a + b, 0) / n,
+    xbar = (n - 1) / 2,
+    sxx = vals.reduce((a, _, i) => a + (i - xbar) ** 2, 0),
+    slope = vals.reduce((a, v, i) => a + (i - xbar) * (v - mean), 0) / sxx,
+    intercept = mean - slope * xbar,
+    sse = vals.reduce((a, v, i) => a + (v - intercept - slope * i) ** 2, 0),
+    se = Math.sqrt(sse / (n - 2)),
+    t =
+      [
+        0, 0, 0, 12.706, 4.303, 3.182, 2.776, 2.571, 2.447, 2.365, 2.306, 2.262,
+        2.228, 2.201, 2.179, 2.16, 2.145, 2.131, 2.12, 2.11, 2.101, 2.093,
+        2.086, 2.08, 2.074,
+      ][n] || 2.228,
+    last = ms.at(-1),
+    lastDate = new Date(Date.UTC(last.y, last.m - 1, 1));
+  if (!vals.some((v) => v)) {
+    $("#forecast").innerHTML =
+      '<p class="muted">No records available for a model.</p>';
+    return;
+  }
+  let html = "";
+  for (let k = 0; k < 3; k++) {
+    let x = n + k,
+      estimate = intercept + slope * x,
+      half = t * se * Math.sqrt(1 + 1 / n + (x - xbar) ** 2 / sxx),
+      date = new Date(
+        Date.UTC(lastDate.getUTCFullYear(), lastDate.getUTCMonth() + 1 + k, 1),
+      );
+    html += `<div class="pred"><span>${months[date.getUTCMonth()]} ${date.getUTCFullYear()}<small>95% prediction interval</small></span><span><b>${fmt(Math.max(0, estimate))}</b><small>${fmt(Math.max(0, estimate - half))}–${fmt(Math.max(0, estimate + half))}</small></span></div>`;
+  }
+  let totalSS = vals.reduce((a, v) => a + (v - mean) ** 2, 0),
+    r2 = totalSS ? 1 - sse / totalSS : 1;
+  html += `<div class="forecast-meta">${n} observations · slope ${slope >= 0 ? "+" : ""}${slope.toFixed(1)} reports/month<br>In-sample R² ${r2.toFixed(3)} · no out-of-sample validation</div>`;
+  $("#forecast").innerHTML = html;
+}
+function renderCommunities() {
+  let s = state(),
+    rows = DATA.filter((r) => matches(r, s, true)),
+    total = sum(rows),
+    search = $("#community-search").value.toLowerCase();
+  let groups = Array.from({ length: 78 }, (_, c) => {
+    let rr = rows.filter((r) => r.c === c),
+      n = sum(rr),
+      a = sum(rr.filter((r) => r.a)),
+      d = sum(rr.filter((r) => r.d));
+    return { c, n, a, d };
+  }).filter((r) => areaName(r.c).toLowerCase().includes(search));
+  groups.sort((a, b) => {
+    let v =
+      sort === "count" ? a.n - b.n : areaName(a.c).localeCompare(areaName(b.c));
+    return sortAsc ? v : -v;
+  });
+  $("#community-table").innerHTML = groups
+    .map((r) => {
+      let ci = wilson(r.a, r.n);
+      return `<tr><td>${esc(areaName(r.c))}<small style="color:#a2ada0"> / ${r.c || "NA"}</small></td><td>${fmt(r.n)}</td><td>${total ? pct(r.n / total) : "—"}</td><td>${r.n ? pct(r.a / r.n) + ' <small style="color:#96a392">(' + pct(ci[0]) + "–" + pct(ci[1]) + ")</small>" : "—"}</td><td>${r.n ? pct(r.d / r.n) : "—"}</td><td><button class="text-button" data-area="${r.c}" ${r.c === 0 ? "disabled" : ""}>Explore ↗</button></td></tr>`;
+    })
+    .join("");
+  $$("#community-table [data-area]").forEach(
+    (x) =>
+      (x.onclick = () => {
+        $("#area").value = x.dataset.area;
+        showView("overview", true);
+        render();
+        scrollTo({ top: 0, behavior: "smooth" });
+      }),
+  );
+}
+function download(name, content, type) {
+  let url = URL.createObjectURL(new Blob([content], { type })),
+    a = document.createElement("a");
+  a.href = url;
+  a.download = name;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+}
+function exportCSV() {
+  let s = state(),
+    rows = DATA.filter((r) => matches(r, s)),
+    q = (v) => '"' + String(v).replaceAll('"', '""') + '"';
+  let header = [
+    "year",
+    "month",
+    "primary_type",
+    "community_area",
+    "community_name",
+    "arrest",
+    "domestic",
+    "incident_count",
+    "source_dataset",
+    "retrieved_date",
+  ];
+  let lines = [
+    header,
+    ...rows.map((r) => [
+      r.y,
+      r.m,
+      r.t,
+      r.c,
+      areaName(r.c),
+      r.a,
+      r.d,
+      r.n,
+      "City of Chicago ijzp-q8t2",
+      "2026-11-12",
+    ]),
+  ];
+  download(
+    `chicago-crime-${s.year}-${s.area}-${s.type === "all" ? "all" : s.type.toLowerCase().replaceAll(" ", "-")}.csv`,
+    "\ufeff" + lines.map((r) => r.map(q).join(",")).join("\r\n"),
+    "text/csv;charset=utf-8",
+  );
+}
+async function init() {
+  try {
+    let [cube, clock, geo] = await Promise.all([
+      fetch("cube.json").then((r) => {
+        if (!r.ok) throw Error("Incident data unavailable");
+        return r.json();
+      }),
+      fetch("clock.json").then((r) => {
+        if (!r.ok) throw Error("Temporal data unavailable");
+        return r.json();
+      }),
+      fetch("geo.json")
+        .then((r) => r.json())
+        .catch(() => null),
+    ]);
+    DATA = cube.map((r) => ({
+      y: +r.year,
+      m: +r.month,
+      t: r.primary_type || "UNKNOWN",
+      c: +r.community_area || 0,
+      a: r.arrest === true || r.arrest === "true",
+      d: r.domestic === true || r.domestic === "true",
+      n: +r.n,
+    }));
+    CLOCK = clock.map((r) => ({
+      y: +r.year,
+      m: +r.month,
+      t: r.primary_type || "UNKNOWN",
+      w: +r.dow,
+      h: +r.hour,
+      n: +r.n,
+    }));
+    GEO = geo;
+    geoOk =
+      GEO?.features?.length === 77 && GEO.features.every((f) => f.geometry);
+    if (!geoOk) {
+      $("#boundary-source").textContent =
+        "Community boundary geometry unavailable in this build; spatial panel shows a labeled count ranking instead.";
+      $("#map").setAttribute("aria-label", "Community counts ranking");
+    }
+    const types = [...new Set(DATA.map((r) => r.t))].sort();
+    $("#type").innerHTML =
+      '<option value="all">All offenses</option>' +
+      types
+        .map((t) => `<option value="${esc(t)}">${esc(title(t))}</option>`)
+        .join("");
+    $("#area").innerHTML =
+      '<option value="all">All 77 communities</option>' +
+      NAMES.slice(1)
+        .map((n, i) => `<option value="${i + 1}">${i + 1} · ${esc(n)}</option>`)
+        .join("");
+    let total = sum(DATA),
+      clockTotal = CLOCK.reduce((a, r) => a + r.n, 0),
+      unknown = sum(DATA.filter((r) => !r.c));
+    $("#quality").textContent =
+      `Snapshot audit: ${fmt(total)} incident records across ${fmt(DATA.length)} aggregate cells; temporal aggregate totals ${fmt(clockTotal)} records. ${fmt(unknown)} records have unknown/unassigned communities (${pct(unknown / total)}). ${total === clockTotal ? "Aggregate totals reconcile." : "Aggregate totals differ; date/time nulls or source revisions may affect reconciliation."}`;
+    $("#loading").hidden = true;
+    $("#app").hidden = false;
+    $$(".filterbar select").forEach((x) => (x.onchange = render));
+    $$(".nav").forEach((x) => (x.onclick = () => showView(x.dataset.view)));
+    ["#source-link", "#methods-button", ".footer-methods"].forEach(
+      (sel) =>
+        ($(sel).onclick = (e) => {
+          e.preventDefault();
+          showView("methods");
+        }),
+    );
+    $("#explore").onclick = () => showView("communities");
+    $("#reset").onclick = () => {
+      $("#year").value = "2025";
+      $("#month-from").value = "1";
+      $("#month-to").value = "12";
+      $("#domestic-filter").value = "all";
+      $("#type").value = "all";
+      $("#area").value = "all";
+      $("#arrest").value = "all";
+      render();
+    };
+    $$(".metric").forEach(
+      (x) =>
+        (x.onclick = () => {
+          metric = x.dataset.metric;
+          $$(".metric").forEach((b) => b.classList.toggle("active", b === x));
+          render();
+        }),
+    );
+    $("#community-search").oninput = renderCommunities;
+    $("#sort-count").onclick = () => {
+      sortAsc = sort === "count" ? !sortAsc : false;
+      sort = "count";
+      renderCommunities();
+    };
+    $("#sort-name").onclick = () => {
+      sortAsc = sort === "name" ? !sortAsc : true;
+      sort = "name";
+      renderCommunities();
+    };
+    $("#export").onclick = exportCSV;
+    $("#download-methods").onclick = () =>
+      download(
+        "chicago-research-metadata.json",
+        JSON.stringify(
+          {
+            title: "Chicago Crime Observatory",
+            kaggle: "https://www.kaggle.com/datasets/chicago/chicago-crime",
+            source: "https://data.cityofchicago.org/resource/ijzp-q8t2.json",
+            retrieved: "2026-11-12",
+            window: ["2024-01-01", "2025-12-31"],
+            records: total,
+            cube_cells: DATA.length,
+            temporal_records: clockTotal,
+            unknown_community: unknown,
+            population_denominator: {
+              value: 2746388,
+              year: 2020,
+              source: "US Census QuickFacts, Chicago city, Illinois",
+            },
+            arrest_interval: "Wilson 95%, z=1.96",
+            forecast:
+              "Monthly OLS, 3 months, 95% prediction intervals; no external validation",
+            filters: state(),
+          },
+          null,
+          2,
+        ),
+        "application/json",
+      );
+    showView(
+      [
+        "overview",
+        "temporal",
+        "communities",
+        "methods",
+        "data",
+        "models",
+        "assistant",
+        "project",
+      ].includes(location.hash.slice(1))
+        ? location.hash.slice(1)
+        : "overview",
+    );
+    render();
+    window.dashboardReady = true;
+  } catch (e) {
+    $("#loading").innerHTML =
+      "The data snapshot could not load. Please refresh. " + esc(e.message);
+    console.error(e);
+  }
+}
 init();

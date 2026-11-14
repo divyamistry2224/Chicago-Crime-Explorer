@@ -15,7 +15,11 @@ An end-to-end public-data portfolio: Python preparation, auditable SQL aggregate
 | Python visualization | Runnable Plotly Dash companion with linked map, monthly series, filters, KPI summaries and download callbacks |
 | Data quality | Full aggregate reconciliation; separate 10,000-record sample audit; local CSV validator; tests of data contracts and leakage prevention |
 
-## Interactive workspaces (version 3)
+## Chicago In Focus (version 4)
+
+A city-atlas redesign with Chicago flag accents, lake-blue maps, condensed editorial typography and an overview centered on the 77-community map. The change lens compares 2025 with 2024 using identical month, offense and flag filters; hover reveals exact counts and percentage change. Community discovery and dispatch shortcuts connect the map to existing temporal, comparison and engineering workspaces.
+
+## Interactive workspaces
 
 Each workspace now opens with its own task, controls and visuals. Overview KPIs and global introductory content do not repeat on the engineering, modeling, assistant, project or methods pages. Overview, time and community pages retain separate filter states; the temporal page deliberately uses only year/offense/month controls.
 
