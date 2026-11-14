@@ -2,7 +2,7 @@
 
 An end-to-end public-data portfolio: Python preparation, auditable SQL aggregates, interactive reporting, and time-based forecasting evaluation.
 
-**Live demo:** https://divyamistry2224.github.io/Chicago-Crime-Explorer/
+**Live demo:** [Open Chicago Crime Explorer](https://divyamistry2224.github.io/Chicago-Crime-Explorer/?v=4.2)
 
 ## What is actually implemented
 
