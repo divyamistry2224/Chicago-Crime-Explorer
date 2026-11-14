@@ -356,7 +356,7 @@ function resetFixtures() {
         row
           .map(
             (v, j) =>
-              `<td><input value="${esc(v)}" data-fixture-row="${i}" data-fixture-col="${j}" aria-label="Row ${i + 1} ${FIXTURE_COLUMNS[j]}"></td>`,
+              `<td><input value="${esc(j === 2 ? String(v).trim() : v)}" data-fixture-row="${i}" data-fixture-col="${j}" aria-label="Row ${i + 1} ${FIXTURE_COLUMNS[j]}"></td>`,
           )
           .join("") +
         "</tr>",

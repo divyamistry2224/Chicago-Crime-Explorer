@@ -2045,3 +2045,7 @@ footer b {
 .comparison-toolbar h2 {
   color: #365f7d;
 }
+
+/* Align category text and its header to one shared column inset. */
+#fixture-grid td:nth-child(3) input { text-align:left; text-indent:0; padding-inline:12px; }
+#fixture-grid th:nth-child(3) { padding-left:24px; text-align:left; }
